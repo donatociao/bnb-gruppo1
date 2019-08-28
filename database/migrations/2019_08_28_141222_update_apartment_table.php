@@ -14,7 +14,7 @@ class UpdateApartmentTable extends Migration
     public function up()
     {
         Schema::table('apartments', function (Blueprint $table) {
-          $table->integer('address_id')->unsigned()->after('url_img');
+          $table->integer('address_id')->unsigned()->after('url_img')->nullable();
           $table->foreign('address_id')->references('id')->on('addresses');
 
         });

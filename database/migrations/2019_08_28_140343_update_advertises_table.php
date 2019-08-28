@@ -14,7 +14,7 @@ class UpdateAdvertisesTable extends Migration
     public function up()
     {
         Schema::table('advertises', function (Blueprint $table) {
-          $table->integer('apartment_id')->unsigned()->after('price');
+          $table->integer('apartment_id')->unsigned()->after('price')->nullable();
           $table->foreign('apartment_id')->references('id')->on('apartments');
         });
     }

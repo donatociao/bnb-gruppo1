@@ -14,7 +14,7 @@ class UpdateAddressesTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
-          $table->integer('geolocal_id')->unsigned()->after('civic_number');
+          $table->integer('geolocal_id')->unsigned()->after('civic_number')->nullable();
           $table->foreign('geolocal_id')->references('id')->on('geolocals');
 
         });

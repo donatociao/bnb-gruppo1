@@ -14,7 +14,7 @@ class UpdateRequestsTable extends Migration
     public function up()
     {
         Schema::table('requests', function (Blueprint $table) {
-          $table->integer('apartment_id')->unsigned()->after('email_req');
+          $table->integer('apartment_id')->unsigned()->after('email_req')->nullable();
           $table->foreign('apartment_id')->references('id')->on('apartments');
 
         });

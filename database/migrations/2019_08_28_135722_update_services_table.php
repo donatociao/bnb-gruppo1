@@ -14,7 +14,7 @@ class UpdateServicesTable extends Migration
     public function up()
     {
         Schema::table('services', function (Blueprint $table) {
-          $table->integer('apartment_id')->unsigned()->after('sea_view');
+          $table->integer('apartment_id')->unsigned()->after('sea_view')->nullable();
           $table->foreign('apartment_id')->references('id')->on('apartments');
         });
     }
