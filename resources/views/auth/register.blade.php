@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name(*)') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -54,14 +54,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="surname" class="col-md-4 col-form-label text-md-right">Cognome</label>
+                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
                             <div class="col-md-6">
                                 <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}</label>
+                            <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Day of the birth') }}</label>
                             <div class="col-md-6">
                                 <input id="birth" type="date" class="form-control" name="birth" value="{{ old('birth') }}">
                             </div>

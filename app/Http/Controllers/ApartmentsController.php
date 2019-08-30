@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use App\Apartment;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +20,9 @@ class ApartmentsController extends Controller
 
     public function index()
     {
-      $apartments:Apartment::all()
+      $idUtente=Auth::user()->id;
+      $appartamentiUtente = Apartment::where('user_id','=',$idUtente)->get();
+      return view('apartments.index', compact('appartamentiUtente'));
     }
 
     /**
