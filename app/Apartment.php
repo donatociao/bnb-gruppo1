@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Apartment extends Model
 {
   public function address(){
-    return $this->hasOne('App/Address');
+    return $this->belongsTo('App\Address','address_id');
   }
 
   public function users(){

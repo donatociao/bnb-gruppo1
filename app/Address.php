@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-  public function apartments(){
-    return $this-> belongsTo('App/Apartment');
+  public function apartment(){
+    return $this-> hasOne('App\Apartment');
   }
 }
