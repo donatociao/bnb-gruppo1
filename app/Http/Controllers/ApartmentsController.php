@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Apartment;
 
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ class ApartmentsController extends Controller
     {
       $idUtente=Auth::user()->id;
       $appartamentiUtente = Apartment::where('user_id','=',$idUtente)->get();
+      dd ($appartamentiUtente);
       return view('apartments.index', compact('appartamentiUtente'));
     }
 
