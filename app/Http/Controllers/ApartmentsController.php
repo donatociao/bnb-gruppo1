@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Apartment;
 use App\Address;
 use App\Service;
+use App\Geolocal;
+
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -26,6 +28,9 @@ class ApartmentsController extends Controller
     {
       $userID=Auth::user()->id;
       $userApartments = Apartment::where('user_id','=',$userID)->get();
+
+      // $lat = Input::get('lat');
+
       return view('apartments.index', compact('userApartments'));
     }
 
@@ -47,7 +52,7 @@ class ApartmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //Validazione dei dati
+        // Validazione dei dati
         $validatedData = $request->validate([
         'title' => 'required|max:255',
         'rooms_number' => 'required|integer|min:0',
@@ -65,7 +70,9 @@ class ApartmentsController extends Controller
         'pool' => 'required|boolean',
         'reception' => 'required|boolean',
         'spa' => 'required|boolean',
-        'sea_view' => 'required|boolean'
+        'sea_view' => 'required|boolean',
+        'latitude' => 'required',
+        'longitude' => 'required'
         ]);
 
         //Recupero i dati
@@ -75,9 +82,13 @@ class ApartmentsController extends Controller
         $nuovo_appartamento = new Apartment();
         $nuovo_indirizzo = new Address();
         $nuovi_servizi = new Service();
+        $nuove_coordinate = new Geolocal();
 
         //Salvo i dati recuperati
+        $nuove_coordinate->fill($dati_inseriti);
+        $nuove_coordinate->save();
         $nuovo_indirizzo->fill($dati_inseriti);
+        $nuovo_indirizzo->geolocal_id = $nuove_coordinate->id;
         $nuovo_indirizzo->save();
         $nuovo_appartamento->fill($dati_inseriti);
         $id_utente = Auth::user()->id; // Recupero l'id dell'utente loggato

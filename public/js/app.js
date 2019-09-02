@@ -49218,6 +49218,45 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(document).ready(function () {
+  //AJAX Geolocalizzazione
+  // $function(){
+  // $('#createApartment').click (function(){
+  //   var dati = $("#form_geo").serialize(); //recupera tutti i valori del form automaticamente
+  //   console.log(dati);
+  //   console.log('Donato');
+  // });
+  $('#invio').change(function () {
+    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente
+
+    console.log(dati);
+    console.log(dati[7].value);
+    $.ajax({
+      type: "GET",
+      // specifico la URL della risorsa da contattare
+      url: "https://api.tomtom.com/search/2/structuredGeocode.json",
+      data: {
+        "postalCode": dati[7].value,
+        "streetName": dati[9].value,
+        "streetNumber": dati[10].value,
+        "municipality": dati[6].value,
+        "countryCode": 'IT',
+        "key": "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
+      },
+      dataType: "json",
+      success: function success(data) {
+        console.log(data);
+        var lat = data.results[0].position.lat;
+        var lon = data.results[0].position.lon;
+        $('#lat_input').val(lat).text(lat);
+        $('#lon_input').val(lon).text(lon);
+      },
+      error: function error() {
+        alert("Chiamata fallita!!!");
+      }
+    });
+  });
+});
 
 /***/ }),
 
@@ -49366,8 +49405,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\bnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\bnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

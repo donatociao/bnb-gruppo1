@@ -8,11 +8,12 @@ class Address extends Model
 {
   protected $fillable = ['city', 'cap', 'prov', 'street', 'civic_number'];
 
-  // DECIDERE QUALE USARE
-  // public function apartments(){
-  //   return $this-> belongsTo('App/Apartment');
-  // }
-  // public function apartment(){
-  //   return $this-> hasOne('App\Apartment');
-  // }
+  public function apartment(){
+    return $this-> hasOne('App\Apartment');
+  }
+
+  public function geolocal(){
+    return $this->belongsTo('App\Geolocal','geolocal_id');
+  }
+
 }
