@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card_container">
-              @forelse($appartamentiUtente as $apartment)
+              @forelse($userApartments as $apartment)
               id: {{$apartment->id}} - title: {{$apartment->title}} -  mq: {{$apartment->mq}} - num stanze: {{$apartment->rooms_number}}
                - Foto: <img src="{{ asset('storage/'. $apartment->url_img) }}">
               <div class="">
