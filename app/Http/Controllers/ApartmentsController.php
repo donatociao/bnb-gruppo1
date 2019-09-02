@@ -98,7 +98,7 @@ class ApartmentsController extends Controller
         $nuovo_appartamento->address_id = $nuovo_indirizzo->id; // Salvo la chiave esterna relativa all'indirizzo nella tabella apartments
         $nuovo_appartamento->save();
         $nuovi_servizi->fill($dati_inseriti);
-        $nuovi_servizi->apartment_id = $nuovo_appartamento->id; // Salvo la chiave esterna relativa all'appartamento nella tabella services
+        // $nuovi_servizi->apartment_id = $nuovo_appartamento->id; // Salvo la chiave esterna relativa all'appartamento nella tabella services
         $nuovi_servizi->save();
 
         return redirect()->route('apartments.index');
