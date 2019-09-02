@@ -9,7 +9,7 @@ class Apartment extends Model
   protected $fillable = ['title', 'rooms_number', 'host_number', 'wc_number', 'mq'];
 
   public function address(){
-    return $this->hasOne('App/Address');
+    return $this->belongsTo('App\Address','address_id');
   }
 
   public function users(){

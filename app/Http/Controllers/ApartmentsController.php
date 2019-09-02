@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Apartment;
 use App\Address;
 use App\Service;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
@@ -23,10 +24,9 @@ class ApartmentsController extends Controller
 
     public function index()
     {
-      $idUtente=Auth::user()->id;
-      $appartamentiUtente = Apartment::where('user_id','=', $idUtente)->get();
-
-      return view('apartments.index', compact('appartamentiUtente'));
+      $userID=Auth::user()->id;
+      $userApartment = Apartment::where('user_id','=',$userID)->get();
+      return view('apartments.index', compact('userApartment'));
     }
 
     /**
