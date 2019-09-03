@@ -49394,7 +49394,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\MAMP\\htdocs\\bnb-gruppo1\\resources\\sass\\app.scss'\n    at runLoaders (C:\\MAMP\\htdocs\\bnb-gruppo1\\node_modules\\webpack\\lib\\NormalModule.js:313:20)\n    at C:\\MAMP\\htdocs\\bnb-gruppo1\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\MAMP\\htdocs\\bnb-gruppo1\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\MAMP\\htdocs\\bnb-gruppo1\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:73:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
