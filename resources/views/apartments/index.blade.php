@@ -8,11 +8,14 @@
               @forelse($userApartments as $apartment)
               id: {{$apartment->id}} - title: {{$apartment->title}} -  mq: {{$apartment->mq}} - num stanze: {{$apartment->rooms_number}}
                - Foto: <img src="{{ asset('storage/'. $apartment->url_img) }}">
+               <div class="">
+                 <a class="btn btn-success" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
+               </div>
               @empty
               <p> Non ci sono appartamenti </p>
               @endforelse
               <div class="">
-                <a class="btn btn-primary" href="{{ route('apartments.create') }}">Inserisci un appartamento</a>
+                <a class="btn btn-primary" href="{{route('apartments.create')}}">Inserisci un appartamento</a>
               </div>
             </div>
         </div>

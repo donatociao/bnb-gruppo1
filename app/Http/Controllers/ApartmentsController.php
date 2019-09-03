@@ -29,42 +29,30 @@ class ApartmentsController extends Controller
       $userID=Auth::user()->id;
       $userApartments = Apartment::where('user_id','=',$userID)->get();
 
-      // $lat = Input::get('lat');
-
       return view('apartments.index', compact('userApartments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
       return view('apartments.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // Validazione dei dati
         $validatedData = $request->validate([
         'title' => 'required|max:255',
-        'rooms_number' => 'required|integer|min:0',
-        'host_number' => 'required|integer|min:0',
-        'wc_number' => 'required|integer|min:0',
-        'mq' => 'required|integer|min:0',
+        'rooms_number' => 'required|integer|min:1',
+        'host_number' => 'required|integer|min:1',
+        'wc_number' => 'required|integer|min:1',
+        'mq' => 'required|integer|min:1',
         'url_img' => 'required|image',
         'city' => 'required|string|max:255',
         'cap' => 'required|integer|digits:5',
         'prov' => 'required|string|max:255',
         'street' => 'required|string|max:255',
-        'civic_number' => 'required|integer|between:0,999',
+        'civic_number' => 'required|integer|between:1,999',
         'wifi' => 'required|boolean',
         'parking' => 'required|boolean',
         'pool' => 'required|boolean',
@@ -85,34 +73,42 @@ class ApartmentsController extends Controller
         $nuove_coordinate = new Geolocal();
 
         //Salvo i dati recuperati
+        $nuovi_servizi->fill($dati_inseriti);
+        $nuovi_servizi->save();
         $nuove_coordinate->fill($dati_inseriti);
         $nuove_coordinate->save();
         $nuovo_indirizzo->fill($dati_inseriti);
-        $nuovo_indirizzo->geolocal_id = $nuove_coordinate->id;
+        $nuovo_indirizzo->geolocal_id = $nuove_coordinate->id; // // Salvo la chiave esterna relativa alle coordinate nella tabella addresses
         $nuovo_indirizzo->save();
         $nuovo_appartamento->fill($dati_inseriti);
         $id_utente = Auth::user()->id; // Recupero l'id dell'utente loggato
         $nuovo_appartamento->user_id = $id_utente; // Salvo la chiave esterna relativa all'utente loggato nella tabella apartments
-        $path_foto = Storage::put('apartment_images', $dati_inseriti['url_img']);
-        $nuovo_appartamento->url_img = $path_foto;
+        $nuovo_appartamento->service_id = $nuovi_servizi->id; // Salvo la chiave esterna relativa ai servizi nella tabella apartments
+        $path_foto = Storage::put('apartment_images', $dati_inseriti['url_img']); // Creo path dell'img da salvare nel db
+        $nuovo_appartamento->url_img = $path_foto; // Salvo path dell'img nel db
         $nuovo_appartamento->address_id = $nuovo_indirizzo->id; // Salvo la chiave esterna relativa all'indirizzo nella tabella apartments
         $nuovo_appartamento->save();
-        $nuovi_servizi->fill($dati_inseriti);
-        // $nuovi_servizi->apartment_id = $nuovo_appartamento->id; // Salvo la chiave esterna relativa all'appartamento nella tabella services
-        $nuovi_servizi->save();
 
         return redirect()->route('apartments.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show($id_apartment)
     {
-        //
+      $dati_appartamento = Apartment::where('id', $id_apartment)->first();
+      if (empty($dati_appartamento)) {
+        abort(404);
+      }
+      $dati_indirizzo = Address::where('id', $dati_appartamento->address_id)->first();
+      $dati_servizi = Service::where('id', $dati_appartamento->service_id)->first();
+      $dati_localizzazione = Geolocal::where('id', $dati_indirizzo->geolocal_id)->first();
+      $data = [
+        'appartamento' => $dati_appartamento,
+        'indirizzo' => $dati_indirizzo,
+        'servizi' => $dati_servizi,
+        'localizzazione' => $dati_localizzazione
+      ];
+      return view('apartments.show', $data);
     }
 
     /**
