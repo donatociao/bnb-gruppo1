@@ -19,6 +19,7 @@ class ApartmentsController extends Controller
          $this->middleware('auth');
      }
 
+
     public function index()
     {
       $userID=Auth::user()->id;
