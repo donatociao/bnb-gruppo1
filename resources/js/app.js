@@ -32,15 +32,9 @@ const app = new Vue({
 });
 
 
-$(document).ready(function(){
 //AJAX Geolocalizzazione
-// $function(){
- // $('#createApartment').click (function(){
- //   var dati = $("#form_geo").serialize(); //recupera tutti i valori del form automaticamente
- //   console.log(dati);
- //   console.log('Donato');
- // });
-
+$(document).ready(function(){
+  
  $('#invio').change(function(){
 
    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente

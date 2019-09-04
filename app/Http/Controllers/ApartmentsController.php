@@ -106,27 +106,69 @@ class ApartmentsController extends Controller
       return view('apartments.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function edit($id_appartamento)
     {
-        //
+      $appartamento_da_modificare = Apartment::where('id', $id_appartamento)->first();
+      if (empty($appartamento_da_modificare)) {
+        abort(404);
+      }
+      $indirizzo_da_modificare = Address::where('id', $appartamento_da_modificare->address_id)->first();
+      $servizi_da_modificare = Service::where('id', $appartamento_da_modificare->service_id)->first();
+      $localizzazione_da_modificare = Geolocal::where('id', $indirizzo_da_modificare->geolocal_id)->first();
+      $data = [
+        'appartamento' => $appartamento_da_modificare,
+        'indirizzo' => $indirizzo_da_modificare,
+        'servizi' => $servizi_da_modificare,
+        'localizzazione' => $localizzazione_da_modificare
+      ];
+      return view('apartments.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+      // Validazione dei dati
+      $validatedData = $request->validate([
+      'title' => 'required|max:255',
+      'rooms_number' => 'required|integer|min:1',
+      'host_number' => 'required|integer|min:1',
+      'wc_number' => 'required|integer|min:1',
+      'mq' => 'required|integer|min:1',
+      'url_img' => 'image',
+      'city' => 'required|string|max:255',
+      'cap' => 'required|integer|digits:5',
+      'prov' => 'required|string|max:255',
+      'street' => 'required|string|max:255',
+      'civic_number' => 'required|integer|between:1,999',
+      'wifi' => 'required|boolean',
+      'parking' => 'required|boolean',
+      'pool' => 'required|boolean',
+      'reception' => 'required|boolean',
+      'spa' => 'required|boolean',
+      'sea_view' => 'required|boolean',
+      'latitude' => 'required',
+      'longitude' => 'required'
+      ]);
+
+      $modifiche = $request->all();
+      $appartamento_da_modificare = Apartment::find($id);
+      if (empty($appartamento_da_modificare)) {
+        abort(404);
+      }
+      $indirizzo_da_modificare = Address::find($appartamento_da_modificare->address_id);
+      $servizi_da_modificare = Service::find($appartamento_da_modificare->service_id);
+      $localizzazione_da_modificare = Geolocal::find($indirizzo_da_modificare->geolocal_id);
+      if (isset($modifiche['url_img'])) {
+        $path_nuova_foto = Storage::put('apartment_images', $modifiche['url_img']); // Creo path dell'img da salvare nel db
+        $appartamento_da_modificare->url_img = $path_nuova_foto; // Salvo path dell'img nel db
+      }
+      $appartamento_da_modificare->update($modifiche);
+      $indirizzo_da_modificare->update($modifiche);
+      $servizi_da_modificare->update($modifiche);
+      $localizzazione_da_modificare->update($modifiche);
+
+      return redirect()->route('apartments.index');
     }
 
 

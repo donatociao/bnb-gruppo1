@@ -24,7 +24,7 @@
                 Metri quadri: {{$appartamento->mq}}
               </div>
               <div class="">
-                Foto: <img src="{{ asset('storage/'. $appartamento->url_img) }}">
+                Foto appartamento: <img src="{{ asset('storage/'. $appartamento->url_img) }}">
               </div>
               <div class="">
                 Indirizzo: {{$indirizzo->city}}
