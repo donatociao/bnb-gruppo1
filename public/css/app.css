@@ -10813,8 +10813,8 @@ body {
 
 .navbar-container {
   max-width: 1263px;
-  max-height: 60px;
-  background-color: #b2bec3;
+  max-height: 70px;
+  background-color: #dfe6e9;
 }
 
 .navbar-container a {
@@ -10828,12 +10828,16 @@ body {
 }
 
 .title {
+  max-width: 1263px;
+  height: 300px;
   font-size: 84px;
   text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .links > a {
-  color: #636b6f;
+  color: #1abc9c;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
@@ -10842,12 +10846,24 @@ body {
   text-transform: uppercase;
 }
 
-.m-b-md {
-  margin-bottom: 30px;
+.form-inline {
+  height: 130px;
+  margin-left: 495px;
 }
 
 .header-container {
   text-align: center;
   font-size: 43px;
+  height: 600px;
+  background-color: #dfe6e9;
+}
+
+.header-container p {
+  margin-top: 20px;
+}
+
+.header-container .card-title,
+.header-container .card-subtitle {
+  font-size: 20px;
 }
 

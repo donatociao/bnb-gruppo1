@@ -1,4 +1,13 @@
 .header-container{
   text-align: center;
   font-size: 43px;
+  height: 600px;
+  background-color: #dfe6e9;
+
+  p{
+    margin-top: 20px;
+  }
+  .card-title, .card-subtitle{
+    font-size: 20px;
+  }
 }

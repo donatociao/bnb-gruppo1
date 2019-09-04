@@ -8,7 +8,7 @@
     <!--Fontawesome-->
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!--Css-->
-    <link rel="stylesheet" href="public/css/app.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
   <body>
 
@@ -29,29 +29,44 @@
             </div>
           @endif
       </div>
+    </div>
     <!--TITLE-->
-    <div class="title m-b-md">
+    <div class="title">
       BoolBnB
       </div>
       <!--SEARCHBAR-->
       <div class="searchbar">
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+          <input class="form-control " type="search" placeholder="search apartments" aria-label="Search">
           <button type="button" class="btn btn-secondary">Cerca</button>
         </form>
       </div>
     </div>
 
   <!--HEADER-->
-  <div class="header-container">
-    <p>I nostri appartamenti:</p>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">(primo appartamento)</h5>
-          <h6 class="card-subtitle mb-2 text-muted">(piccola descrizione e luogo)</h6>
-          <img src=" " alt=" " class="rounded">
+    <div class="header-container">
+      <p>I nostri appartamenti:</p>
+        <div class="card1 col-3" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">(primo appartamento)</p>
+            <p class="card-subtitle text-muted">(piccola descrizione e luogo)</p>
+            <img src=" " alt=" " class="rounded">
+          </div>
+        </div>
+        <div class="card2 col-3" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">(primo appartamento)</p>
+            <p class="card-subtitle text-muted">(piccola descrizione e luogo)</p>
+            <img src=" " alt=" " class="rounded">
+          </div>
+        </div>
+        <div class="card3 col-3" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">(primo appartamento)</p>
+            <p class="card-subtitle text-muted">(piccola descrizione e luogo)</p>
+            <img src=" " alt=" " class="rounded">
+          </div>
         </div>
       </div>
-  </div>
-</body>
+  </body>
 </html>
