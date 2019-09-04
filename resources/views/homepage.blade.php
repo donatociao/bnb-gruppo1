@@ -3,13 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Homepage</title>
+        <title>BooldBnB</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!--Css-->
+        <link rel="stylesheet" href="public/css/app.css">
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
 
-        <!-- Styles -->
+
         <style>
             html, body {
                 background-color: #fff;
@@ -64,36 +67,32 @@
         </style>
     </head>
     <body>
+      <!--CONTENT-->
+      <div class="content">
+          <div class="title m-b-md">
+              BoolBnB
+          </div>
+          <!--IMAGE CONTENT-->
+
+        <!--NAVBAR-->
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Accedi</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registrati</a>
                         @endif
                     @endauth
+                    <!--SEARCBAR-->
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+                    </form>
+                  </div>
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Homepage Boolbnb
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+          </br>
