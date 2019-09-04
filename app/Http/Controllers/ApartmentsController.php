@@ -14,11 +14,6 @@ use Illuminate\Http\Request;
 
 class ApartmentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
      public function __construct()
      {
          $this->middleware('auth');
@@ -134,14 +129,21 @@ class ApartmentsController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy($id_apartment)
     {
-        //
+      $appartamento_da_cancellare = Apartment::find($id_apartment);
+      if (empty($appartamento_da_cancellare)) {
+        abort(404);
+      }
+      $indirizzo_da_cancellare = Address::find($appartamento_da_cancellare->address_id);
+      $servizi_da_cancellare = Service::find($appartamento_da_cancellare->service_id);
+      $localizzazione_da_cancellare = Geolocal::find($indirizzo_da_cancellare->geolocal_id);
+      $appartamento_da_cancellare->delete();
+      $servizi_da_cancellare->delete();
+      $indirizzo_da_cancellare->delete();
+      $localizzazione_da_cancellare->delete();
+
+      return redirect()->route('apartments.index');
     }
 }

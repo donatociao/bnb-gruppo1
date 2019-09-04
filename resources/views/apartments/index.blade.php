@@ -7,10 +7,12 @@
             <div class="card_container">
               @forelse($userApartments as $apartment)
               id: {{$apartment->id}} - title: {{$apartment->title}} -  mq: {{$apartment->mq}} - num stanze: {{$apartment->rooms_number}}
-               - Foto: <img src="{{ asset('storage/'. $apartment->url_img) }}">
-               <div class="">
                  <a class="btn btn-success" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
-               </div>
+               <form class="" action="{{route('apartments.destroy', $apartment->id)}}" method="post" style="display: inline;">
+                 @method('DELETE')
+                 @csrf
+                 <input class="btn btn-danger" type="submit" name="" value="Cancella">
+               </form>
               @empty
               <p> Non ci sono appartamenti </p>
               @endforelse
