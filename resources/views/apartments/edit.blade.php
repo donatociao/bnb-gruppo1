@@ -47,23 +47,33 @@
 
       <div class="form-group">
         <label for="city">Città:</label>
-        <input type="text" class="form-control" name="city" placeholder="Inserisci la città" value="{{ old('city', $indirizzo->city) }}">
+        <input type="text" class="form-control modCoordinate" name="city" placeholder="Inserisci la città" value="{{ old('city', $indirizzo->city) }}">
       </div>
       <div class="form-group">
         <label for="cap">Cap:</label>
-        <input type="text" class="form-control" name="cap" placeholder="Inserisci il cap" value="{{ old('cap', $indirizzo->cap) }}">
+        <input type="text" class="form-control modCoordinate" name="cap" placeholder="Inserisci il cap" value="{{ old('cap', $indirizzo->cap) }}">
       </div>
       <div class="form-group">
         <label for="prov">Provincia:</label>
-        <input type="text" class="form-control" name="prov" placeholder="Inserisci la provincia" value="{{ old('prov', $indirizzo->prov) }}">
+        <input type="text" class="form-control modCoordinate" name="prov" placeholder="Inserisci la provincia" value="{{ old('prov', $indirizzo->prov) }}">
       </div>
       <div class="form-group">
         <label for="street">Via:</label>
-        <input type="text" class="form-control" name="street" placeholder="Inserisci la via" value="{{ old('street', $indirizzo->street) }}">
+        <input type="text" class="form-control modCoordinate" name="street" placeholder="Inserisci la via" value="{{ old('street', $indirizzo->street) }}">
       </div>
       <div class="form-group">
         <label for="civic_number">Numero civico:</label>
-        <input id="invio" type="text" class="form-control" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number', $indirizzo->civic_number) }}">
+        <input type="text" class="form-control modCoordinate" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number', $indirizzo->civic_number) }}">
+      </div>
+
+      <div class="invio">
+        Calcola le coordinate
+      </div>
+
+      <div class="form-group">
+        <label for="geolocals">Coordinate:</label>
+        <input class="lat_input" type="text"  name="latitude" value="{{ old('latitude', $localizzazione->latitude) }}">Latitudine
+        <input class="lon_input" type="text"  name="longitude" value="{{ old('longitude', $localizzazione->longitude) }}">Longitudine
       </div>
 
       <div class="form-group">
@@ -97,11 +107,6 @@
         <input type="radio"  name="sea_view" value="0" {{ old('sea_view', $servizi->sea_view) == "0" ? 'checked' : null }}>no
       </div>
 
-      <div class="form-group">
-        <label for="sea_view">Coordinate:</label>
-        <input id="lat_input" type="text"  name="latitude" value="{{ old('latitude', $localizzazione->latitude) }}">Latitudine
-        <input id="lon_input" type="text"  name="longitude" value="{{ old('longitude', $localizzazione->longitude) }}">Longitudine
-      </div>
 
       @if ($appartamento->public === 1)
         <label for="public">Rendi invisibile l'appartamento nei risultati di ricerca:</label>

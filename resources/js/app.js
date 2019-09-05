@@ -34,8 +34,8 @@ const app = new Vue({
 
 //AJAX Geolocalizzazione
 $(document).ready(function(){
-  
- $('#invio').change(function(){
+
+ $('.invio').click(function(){
 
    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente
    console.log(dati);
@@ -61,8 +61,8 @@ $(document).ready(function(){
       console.log(data);
       var lat = data.results[0].position.lat;
       var lon = data.results[0].position.lon;
-      $('#lat_input').val(lat).text(lat);
-      $('#lon_input').val(lon).text(lon);
+      $('.lat_input').val(lat).text(lat);
+      $('.lon_input').val(lon).text(lon);
      },
 
      error: function(){
@@ -70,4 +70,9 @@ $(document).ready(function(){
      }
    });
  });
+
+  $('.modCoordinate').keyup(function(){
+    $('.lat_input').val(lat).text(lat);
+    $('.lon_input').val(lat).text(lat);
+  });
 });

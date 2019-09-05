@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/contatta_host','EmailController@contatta')->name('contatta.form');
+Route::post('/contatta_host','EmailController@leggiMessaggio')->name('contatta.store');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/apartments','ApartmentsController');
