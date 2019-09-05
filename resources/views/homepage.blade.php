@@ -5,8 +5,6 @@
     <title>BooldBnB</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <!--Fontawesome-->
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!--Css-->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
