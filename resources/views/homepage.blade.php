@@ -35,7 +35,7 @@
       <div class="searchbar">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2 " type="search" placeholder="Cerca appartamenti" aria-label="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cerca</button>
+          <button class="btn btn-dark my-2 my-sm-0" type="submit">Cerca</button>
         </form>
       </div>
     </div>
@@ -67,7 +67,7 @@
         </div>
         <!--FOOTER-->
         <div class="footer-container">
-          <p>Condizioni e privacy:</p>
+          <p class="privacy" style="color: #2d3436">Condizioni e privacy:</p>
           <hr class="clearfix w-100 d-md-none pb-3">
           <div class="list">
           <ul class="list-unstyled">

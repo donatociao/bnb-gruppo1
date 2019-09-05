@@ -10785,10 +10785,8 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 200;
   height: 100%;
-  color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
-  height: 100vh;
 }
 
 .full-height {
@@ -10814,7 +10812,7 @@ body {
 .navbar-container {
   width: 100%;
   max-height: 70px;
-  background-color: #dfe6e9;
+  background-color: #2d3436;
 }
 
 .navbar-container a {
@@ -10834,6 +10832,7 @@ body {
   text-align: center;
   margin: 0 auto;
   margin-top: 20px;
+  color: #2d3436;
   background-image: url(https://trepievi.com/wp-content/uploads/2018/10/Domaso-Residence-con-Piscina-Rif.A057-1-RENDERING-1.jpg);
 }
 
@@ -10853,7 +10852,7 @@ body {
 }
 
 .form-control {
-  border: 2px solid #636b6f;
+  border: 2px solid #2d3436;
 }
 
 .searchbar {
@@ -10861,19 +10860,16 @@ body {
   border: 2px solid #1abc9c;
 }
 
-.btn .btn-secondary {
-  border: 1px solid #fff;
-}
-
 .header-container {
   text-align: center;
   font-size: 43px;
   height: 600px;
-  background-color: #dfe6e9;
+  background-color: #2d3436;
 }
 
 .header-container p {
   margin-top: 20px;
+  color: #fff;
 }
 
 .header-container .card-title,
@@ -10902,6 +10898,8 @@ body {
   font-size: 18px;
   width: 1263px;
   margin-top: 40px;
+  color: #2d3436;
+  font-weight: bold;
 }
 
 a {
@@ -10910,7 +10908,7 @@ a {
 }
 
 a:hover {
-  color: #636b6f;
+  color: #1abc9c;
   text-decoration: none;
 }
 
