@@ -1,11 +1,11 @@
 <?php
 
-use App\Request;
+use App\Message;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Str;
 
-class RequestsTableSeeder extends Seeder
+class MessagesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class RequestsTableSeeder extends Seeder
       $faker = Faker::create();
 
       for ($i=0; $i < 20; $i++) {
-        $new_request = new Request();
+        $new_request = new Message();
         $new_request->message = $faker->text(rand(35,400));
         $new_request->email_req = $faker->email();
         $new_request->user_id = rand(1,5);
