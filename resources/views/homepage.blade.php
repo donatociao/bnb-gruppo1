@@ -32,16 +32,39 @@
     <div class="title">
       BoolBnB
       <!--SEARCHBAR-->
-      <div class="searchbar">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 " type="search" placeholder="Cerca appartamenti" aria-label="Search">
-          <button class="btn btn-dark my-2 my-sm-0" type="submit">Cerca</button>
-        </form>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="searchbar">
+              <form class="form my-2 my-lg-0 w-50 mx-auto">
+                <input class="form-control" type="search" placeholder="Cerca appartamenti" aria-label="Search">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Cerca</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!--HEADER-->
+  <div class="header-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>I nostri appartamenti:</p>
+          @foreach ($appartamenti as $appartamento)
+              <div class="card-body">
+                <p class="card-title">{{ $appartamento->title }}</p>
+                <p class="card-subtitle text-muted">Descrizione appartamento</p>
+                <img class="w-25" src="{{ asset($appartamento->url_img) }}" alt=" " class="rounded">
+              </div>
+          @endforeach
+        </div>
       </div>
     </div>
   </div>
 
-  <!--HEADER-->
+
     <div class="header-container">
       <p>I nostri appartamenti:</p>
         <div class="card1 col-4" style="width: 18rem;">
@@ -67,24 +90,30 @@
         </div>
         <!--FOOTER-->
         <div class="footer-container">
-          <p class="privacy" style="color: #2d3436">Condizioni e privacy:</p>
-          <hr class="clearfix w-100 d-md-none pb-3">
-          <div class="list">
-          <ul class="list-unstyled">
-            <li>
-              <a href="">Condizioni</a>
-            </li>
-            <li>
-              <a href="">Opportunità di lavoro</a>
-            </li>
-            <li>
-              <a href="">Aiuto</a>
-            </li>
-            <li>
-              <a href="">News</a>
-            </li>
-          </ul>
-          <div class="footer-copyright text-center py-3">© 2019 BoolBnB, Inc. All rights reserved.</div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <p class="privacy" style="color: #2d3436">Condizioni e privacy:</p>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="list">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="">Condizioni</a>
+                  </li>
+                  <li>
+                    <a href="">Opportunità di lavoro</a>
+                  </li>
+                  <li>
+                    <a href="">Aiuto</a>
+                  </li>
+                  <li>
+                    <a href="">News</a>
+                  </li>
+                </ul>
+                </div>
+                <div class="copyright text-center py-3">© 2019 BoolBnB, Inc. All rights reserved.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
