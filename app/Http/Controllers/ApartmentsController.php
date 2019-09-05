@@ -45,7 +45,7 @@ class ApartmentsController extends Controller
         'mq' => 'required|integer|min:1',
         'url_img' => 'required|image',
         'city' => 'required|string|max:255',
-        'cap' => 'required|integer|digits:5',
+        'cap' => 'required|numeric|digits:5',
         'prov' => 'required|string|max:255',
         'street' => 'required|string|max:255',
         'civic_number' => 'required|integer|between:1,999',

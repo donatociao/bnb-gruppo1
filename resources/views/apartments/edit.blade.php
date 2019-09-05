@@ -103,8 +103,19 @@
         <input id="lon_input" type="text"  name="longitude" value="{{ old('longitude', $localizzazione->longitude) }}">Longitudine
       </div>
 
-      <button id="createApartment" type="submit" class="btn btn-primary">Modifica</button>
+      @if ($appartamento->public === 1)
+        <label for="public">Rendi invisibile l'appartamento nei risultati di ricerca:</label>
+        <input type="checkbox"  name="public" value="0">
+      @else
+        <label for="public">Rendi visibile l'appartamento nei risultati di ricerca:</label>
+        <input type="checkbox"  name="public" value="1">
+      @endif
+
+      <button id="createApartment" type="submit" class="btn btn-primary" style="display: block; margin: 30px 0;">Modifica</button>
     </form>
+    <div class="">
+      <a class="btn btn-primary" href="{{route('apartments.index')}}">Torna agli appartamenti</a>
+    </div>
   </div>
 
 @endsection

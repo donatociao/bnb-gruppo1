@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card_container">
               <div class="">
                 ID: {{$appartamento->id}}
@@ -87,6 +87,13 @@
                   Vista mare: Si
                 @else
                   Vista mare: No
+                @endif
+              </div>
+              <div class="">
+                @if ($appartamento->public == 1)
+                  Visibilità nei risultati di ricerca: Si
+                @else
+                  Visibilità nei risultati di ricerca: No
                 @endif
               </div>
             </div>
