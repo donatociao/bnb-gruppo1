@@ -1,0 +1,32 @@
+.footer-container{
+  max-width: 1263px;
+  height: 250px;
+  margin-top: 40px;
+  position:inherit;
+}
+
+.list{
+  margin-top: 40px;
+}
+
+.list-unstyled{
+  font-size: 18px;
+  list-style: none;
+}
+
+.footer-copyright{
+  text-align: center;
+  font-size: 18px;
+  width: 1263px;
+  margin-top: 40px;
+}
+
+a{
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+  a:hover{
+    color: #636b6f;
+    text-decoration: none;
+  }

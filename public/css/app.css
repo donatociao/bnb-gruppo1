@@ -10829,11 +10829,12 @@ body {
 
 .title {
   max-width: 1263px;
-  height: 300px;
+  height: 850px;
   font-size: 84px;
   text-align: center;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
+  background-image: url(https://trepievi.com/wp-content/uploads/2018/10/Domaso-Residence-con-Piscina-Rif.A057-1-RENDERING-1.jpg);
 }
 
 .links > a {
@@ -10851,6 +10852,19 @@ body {
   margin-left: 495px;
 }
 
+.form-control {
+  border: 2px solid #636b6f;
+}
+
+.searchbar {
+  margin-top: 274px;
+  border: 2px solid #1abc9c;
+}
+
+.btn .btn-secondary {
+  border: 1px solid #fff;
+}
+
 .header-container {
   text-align: center;
   font-size: 43px;
@@ -10865,5 +10879,38 @@ body {
 .header-container .card-title,
 .header-container .card-subtitle {
   font-size: 20px;
+}
+
+.footer-container {
+  max-width: 1263px;
+  height: 250px;
+  margin-top: 40px;
+  position: inherit;
+}
+
+.list {
+  margin-top: 40px;
+}
+
+.list-unstyled {
+  font-size: 18px;
+  list-style: none;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 18px;
+  width: 1263px;
+  margin-top: 40px;
+}
+
+a {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #636b6f;
+  text-decoration: none;
 }
 
