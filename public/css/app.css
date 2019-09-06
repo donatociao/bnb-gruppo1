@@ -10825,6 +10825,10 @@ body {
   text-transform: uppercase;
 }
 
+.navbar-container a:hover {
+  color: #fff;
+}
+
 .top-right {
   position: absolute;
   right: 10px;

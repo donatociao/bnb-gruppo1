@@ -2,15 +2,19 @@
 .navbar-container{
   width: 100%;
   max-height: 70px;
-  background-color: #2d3436;
+  background-color: $colorGRAY;
   a {
-    color: #636b6f;
+    color: $coloGREEN;
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  a:hover{
+    color: #fff;
   }
 }
 
@@ -28,12 +32,11 @@
   font-size: 84px;
   text-align: center;
   margin: 0 auto;
-  color: #2d3436;
+  color: $colorGRAY;
   background-image: url(https://trepievi.com/wp-content/uploads/2018/10/Domaso-Residence-con-Piscina-Rif.A057-1-RENDERING-1.jpg);
 }
 
 .links > a {
-  color: #1abc9c;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
@@ -45,11 +48,11 @@
 //SEARCHBAR
 
 .form-control{
-  border: 2px solid #2d3436;
+  border: 2px solid $backgroundGRAYcolor;
   margin-top: 20px;
 }
 
 .searchbar{
   margin-top: 274px;
-  border: 2px solid #1abc9c;
+  border: 2px solid $colorGRAY;
 }

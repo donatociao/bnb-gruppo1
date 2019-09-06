@@ -7,7 +7,7 @@
   font-size: 18px;
   width: 1263px;
   margin-top: 40px;
-  color: #2d3436;
+  color: $colorGRAY;
   font-weight: bold;
 }
 
@@ -25,13 +25,13 @@
 }
 
 a{
-  color: #1abc9c;
+  color: $colorGRAY;
   font-weight: bold;
   padding: 10px;
 }
 
 a:hover{
-  color: #2d3436;
+  color: $colorGRAY;
   text-decoration: none;
 }
 
