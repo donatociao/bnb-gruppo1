@@ -1,20 +1,8 @@
 .footer-container{
   max-width: 1263px;
-  height: 250px;
+  height: 300px;
   margin-top: 40px;
   position:inherit;
-}
-
-.list{
-  margin-top: 40px;
-}
-
-.list-unstyled{
-  font-size: 18px;
-  list-style: none;
-}
-
-.footer-copyright{
   text-align: center;
   font-size: 18px;
   width: 1263px;
@@ -23,12 +11,39 @@
   font-weight: bold;
 }
 
+.list{
+  margin-top: 40px;
+
+  ul li{
+      padding: 5px;
+  }
+}
+
+.list-unstyled{
+  font-size: 18px;
+  list-style: none;
+}
+
 a{
   color: #1abc9c;
   font-weight: bold;
+  padding: 10px;
 }
 
-  a:hover{
-    color: #1abc9c;
-    text-decoration: none;
-  }
+a:hover{
+  color: #2d3436;
+  text-decoration: none;
+}
+
+.container-card{
+  width: 300px;
+  float: right;
+}
+
+.privacy{
+  font-size: 43px;
+}
+.copyright{
+  font-size: 18px;
+  margin-top: 40px;
+}

@@ -1,14 +1,29 @@
 .header-container{
   text-align: center;
   font-size: 43px;
-  height: 600px;
+  height: 1500px;
+  width: 100%;
   background-color: #2d3436;
 
   p{
     margin-top: 20px;
     color: #fff;
   }
-  .card-title, .card-subtitle{
+  .card-title{
     font-size: 20px;
   }
+}
+
+.container{
+  max-width: 100%;
+}
+
+.container-card{
+  width: 300px;
+  float: right;
+}
+
+.dim-img {
+  width: 230px;
+  height: 140px;
 }
