@@ -56,3 +56,22 @@
   margin-top: 274px;
   border: 2px solid $colorGRAY;
 }
+
+.dim-img{
+  width: 280px;
+  height: 140px;
+}
+
+
+/*DEVICE SX - desktops*/
+@media screen and (min-width:768px) and (max-width:992px){
+}
+
+/*DEVICES MD - desktops*/
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/*DEVICES LG - large desktops*/
+@media screen and (max-width: 1220px) {
+  
+}

@@ -47,14 +47,14 @@
     <div class="header-container">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-12">
             <p>I nostri appartamenti:</p>
           <div
             @foreach ($appartamenti as $appartamento)
-              <div class="container-card col-4">
+              <div class="container-card col-md-4">
                 <div class="card-body">
                   <p class="card-title">{{ $appartamento->title }}</p>
-                  <img class="dim-img" src="{{ asset($appartamento->url_img) }}" alt=" " class="rounded">
+                  <img class="dim-img col-md-12" src="{{ asset($appartamento->url_img) }}" alt=" " class="rounded">
                 </div>
               </div>
             @endforeach
@@ -66,7 +66,7 @@
     <div class="footer-container">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-12">
             <p class="privacy">Condizioni e privacy:</p>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="list">
