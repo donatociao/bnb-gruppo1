@@ -29,27 +29,23 @@
     </div>
     <!--TITLE/SEARCHBAR-->
       <div class="searchbar-container">
-        <div class="row">
-          <div class="col-12">
-            <div class="title">
-              <p>BoolBnB<p>
-                <div class="searchbar">
-                  <form class="form my-2 my-lg-0 w-50 mx-auto">
-                    <input class="form-control" type="search" placeholder="Cerca appartamenti" aria-label="Search">
-                    <button class="btn btn-dark my-2 my-sm-0" type="submit">CERCA!</button>
-                  </form>
-                </div>
-              </div>
-          </div>
+        <div class="title">
+          <p>BoolBnB<p>
+            <div class="searchbar">
+              <form class="form my-2 my-lg-0 w-50 mx-auto">
+                <input class="form-control" type="search" placeholder="Cerca appartamenti" aria-label="Search">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">CERCA!</button>
+              </form>
+            </div>
         </div>
       </div>
-    </div>
   <!--HEADER-->
     <div class="header-container">
       <div class="container">
-        <div class="row">
+        <div class="row-header">
           <div class="col-md-12">
-            <p>I nostri appartamenti:</p>
+            <p>I nostri appartamenti in evidenza:</p>
+            <!--appartamenti in evidenza primi 4 (da vedere) : MORBIDO!-->
             @foreach ($appartamenti as $appartamento)
               <div class="container-card col-md-3">
                 <div class="card-body">
@@ -59,6 +55,16 @@
               </div>
             @endforeach
           </div>
+          <!--<div class="col-md-12">
+            @foreach ($appartamenti as $appartamento)
+              <div class="container-card col-md-3">
+                <div class="card-body">
+                  <p class="card-title">{{ $appartamento->title }}</p>
+                  <img class="dim-img col-md-12" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
+                </div>
+              </div>
+            @endforeach
+          </div>-->
         </div>
       </div>
     </div>

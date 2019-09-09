@@ -10849,7 +10849,7 @@ body {
   color: #2d3436;
   background-image: url(https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/CASA24/2018/09/21/Casa24/ImmaginiWeb/Ritagli/render%206-kbtD--835x437@IlSole24Ore-Web.jpg?uuid=bb00f080-bcea-11e8-adda-bb23987f85a6);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .links > a {
@@ -10896,6 +10896,7 @@ body {
   height: 1100px;
   width: 100%;
   background-color: #2d3436;
+  padding-top: 10px;
 }
 
 .header-container p {

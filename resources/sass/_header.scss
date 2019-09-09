@@ -1,9 +1,10 @@
 .header-container{
   text-align: center;
   font-size: 43px;
-  height: 1700px;
+  height: 1100px;
   width: 100%;
-  background-color: $backgroundGRAYcolor;
+  background-color: #2d3436;
+  padding-top: 10px;
 
   p{
     margin-top: 40px;
@@ -12,15 +13,16 @@
   }
   .card-title{
     font-size: 20px;
+    width: 230px;
   }
 }
 
 .container{
-  max-width: 100%;
+  width: 100%;
 }
 
 .container-card{
-  width: 300px;
+  width: 350px;
   float: right;
 }
 

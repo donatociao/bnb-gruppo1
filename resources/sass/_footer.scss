@@ -1,14 +1,14 @@
 .footer-container{
-  max-width: 1263px;
+  max-width: 1260px;
   height: 300px;
   margin-top: 40px;
   position:inherit;
   text-align: center;
   font-size: 18px;
   width: 1263px;
-  margin-top: 40px;
-  color: $colorGRAY;
+  color: #636b6f;
   font-weight: bold;
+  margin-left: 250px;
 }
 
 .list{
@@ -25,13 +25,13 @@
 }
 
 a{
-  color: $colorGRAY;
+  color: #1abc9c;
   font-weight: bold;
   padding: 10px;
 }
 
 a:hover{
-  color: $colorGRAY;
+  color: #2d3436;
   text-decoration: none;
 }
 
