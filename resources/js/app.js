@@ -5,8 +5,9 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,9 +38,8 @@ $(document).ready(function(){
 
  $('.invio').click(function(){
 
+
    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente
-   console.log(dati);
-   console.log(dati[7].value);
 
    $.ajax({
       type: "GET",
@@ -71,8 +71,8 @@ $(document).ready(function(){
    });
  });
 
-  $('.modCoordinate').keyup(function(){
-    $('.lat_input').val(lat).text(lat);
-    $('.lon_input').val(lat).text(lat);
+  $('.modCoordinate').keydown(function(){
+    $('.lat_input').val('').text('');
+    $('.lon_input').val('').text('');
   });
 });

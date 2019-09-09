@@ -66,7 +66,7 @@
         <input type="text" class="form-control modCoordinate" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number', $indirizzo->civic_number) }}">
       </div>
 
-      <div class="invio">
+      <div class="alert alert-dark invio">
         Calcola le coordinate
       </div>
 

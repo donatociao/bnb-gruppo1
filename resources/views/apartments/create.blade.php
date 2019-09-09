@@ -2,7 +2,7 @@
 
 
 @section('content')
-  <div class="container mt-5">
+  <div class="container mt-4">
     <h1>Inserisci un nuovo appartamento</h1>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -43,27 +43,27 @@
 
       <div class="form-group">
         <label for="city">Città:</label>
-        <input type="text" class="form-control" name="city" placeholder="Inserisci la città" value="{{ old('city') }}">
+        <input type="text" class="form-control modCoordinate" name="city" placeholder="Inserisci la città" value="{{ old('city') }}">
       </div>
       <div class="form-group">
         <label for="cap">Cap:</label>
-        <input type="text" class="form-control" name="cap" placeholder="Inserisci il cap" value="{{ old('cap') }}">
+        <input type="text" class="form-control modCoordinate" name="cap" placeholder="Inserisci il cap" value="{{ old('cap') }}">
       </div>
       <div class="form-group">
         <label for="prov">Provincia:</label>
-        <input type="text" class="form-control" name="prov" placeholder="Inserisci la provincia" value="{{ old('prov') }}">
+        <input type="text" class="form-control modCoordinate" name="prov" placeholder="Inserisci la provincia" value="{{ old('prov') }}">
       </div>
       <div class="form-group">
         <label for="street">Via:</label>
-        <input type="text" class="form-control" name="street" placeholder="Inserisci la via" value="{{ old('street') }}">
+        <input type="text" class="form-control modCoordinate" name="street" placeholder="Inserisci la via" value="{{ old('street') }}">
       </div>
       <div class="form-group">
         <label for="civic_number">Numero civico:</label>
-        <input type="text" class="form-control" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number') }}">
+        <input type="text" class="form-control modCoordinate" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number') }}">
       </div>
 
-      <div class="invio">
-        Calcola le coordinate
+      <div class="alert alert-dark invio" role="alert">
+        Calcola le coordinate:
       </div>
 
       <div class="form-group">

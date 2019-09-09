@@ -25,9 +25,11 @@
                     <td>
                       <a class="btn btn-success" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
                       <a class="btn btn-warning" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>
-                      @method('DELETE')
-                      @csrf
-                      <input class="btn btn-danger" type="submit" name="" value="Cancella">
+                      <form id="delete" action="{{ route('apartments.destroy', $apartment->id) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <input class="btn btn-danger" type="submit" name="" value="Cancella">
+                      </form>
                     </td>
                   </tr>
                 </tbody>

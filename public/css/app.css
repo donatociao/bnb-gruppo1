@@ -10785,8 +10785,6 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 200;
   height: 100%;
-  font-family: "Nunito", sans-serif;
-  font-weight: 200;
 }
 
 .full-height {
@@ -10846,7 +10844,6 @@ body {
 }
 
 .links > a {
-  color: #1abc9c;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
@@ -10856,21 +10853,30 @@ body {
 }
 
 .form-control {
-  border: 2px solid #2d3436;
   margin-top: 20px;
 }
 
 .searchbar {
   margin-top: 274px;
-  border: 2px solid #1abc9c;
+  border: 2px solid #2d3436;
 }
+
+.dim-img {
+  width: 280px;
+  height: 140px;
+}
+
+/*DEVICE SX - desktops*/
+
+/*DEVICES MD - desktops*/
+
+/*DEVICES LG - large desktops*/
 
 .header-container {
   text-align: center;
   font-size: 43px;
   height: 1700px;
   width: 100%;
-  background-color: #2d3436;
 }
 
 .header-container p {
@@ -10924,7 +10930,7 @@ body {
 }
 
 a {
-  color: #1abc9c;
+  color: #2d3436;
   font-weight: bold;
   padding: 10px;
 }

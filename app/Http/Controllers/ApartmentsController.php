@@ -91,10 +91,13 @@ class ApartmentsController extends Controller
 
     public function show($id_apartment)
     {
+      // Recupero l'appartamento da visualizzare
       $dati_appartamento = Apartment::where('id', $id_apartment)->first();
+      // Verifico se l'id dell'appartamento è presente nel DB
       if (empty($dati_appartamento)) {
         abort(404);
       }
+      // Recupero gli altri dati dell'appartamento da visualizzare
       $dati_indirizzo = Address::where('id', $dati_appartamento->address_id)->first();
       $dati_servizi = Service::where('id', $dati_appartamento->service_id)->first();
       $dati_localizzazione = Geolocal::where('id', $dati_indirizzo->geolocal_id)->first();
@@ -110,10 +113,13 @@ class ApartmentsController extends Controller
 
     public function edit($id_appartamento)
     {
+      // Recupero l'appartamento da modificare
       $appartamento_da_modificare = Apartment::where('id', $id_appartamento)->first();
+      // Verifico se l'id dell'appartamento è presente nel DB
       if (empty($appartamento_da_modificare)) {
         abort(404);
       }
+      // Recupero gli altri dati dell'appartamento da modificare
       $indirizzo_da_modificare = Address::where('id', $appartamento_da_modificare->address_id)->first();
       $servizi_da_modificare = Service::where('id', $appartamento_da_modificare->service_id)->first();
       $localizzazione_da_modificare = Geolocal::where('id', $indirizzo_da_modificare->geolocal_id)->first();
@@ -152,18 +158,23 @@ class ApartmentsController extends Controller
       'longitude' => 'required'
       ]);
 
+      // Recupero i dati che arrivano dal form
       $modifiche = $request->all();
       $appartamento_da_modificare = Apartment::find($id);
+      // Verifico se l'id dell'appartamento è presente nel DB
       if (empty($appartamento_da_modificare)) {
         abort(404);
       }
+      // Recupero Recupero le tabelle relative alle altre info dell'appartamento da modificare
       $indirizzo_da_modificare = Address::find($appartamento_da_modificare->address_id);
       $servizi_da_modificare = Service::find($appartamento_da_modificare->service_id);
       $localizzazione_da_modificare = Geolocal::find($indirizzo_da_modificare->geolocal_id);
+      // Se la foto dell'appartamento è stata modificata salvo la nuova path nel DB
       if (isset($modifiche['url_img'])) {
         $path_nuova_foto = Storage::put('apartment_images', $modifiche['url_img']); // Creo path dell'img da salvare nel db
         $appartamento_da_modificare->url_img = $path_nuova_foto; // Salvo path dell'img nel db
       }
+      // Salvo le modifiche nelle tabelle del DB
       $appartamento_da_modificare->update($modifiche);
       $indirizzo_da_modificare->update($modifiche);
       $servizi_da_modificare->update($modifiche);
@@ -175,13 +186,16 @@ class ApartmentsController extends Controller
 
     public function destroy($id_apartment)
     {
+      // Recupero l'appartamento da cancellare
       $appartamento_da_cancellare = Apartment::find($id_apartment);
       if (empty($appartamento_da_cancellare)) {
         abort(404);
       }
+      // Recupero le tabelle collegate all'appartamento da modificare
       $indirizzo_da_cancellare = Address::find($appartamento_da_cancellare->address_id);
       $servizi_da_cancellare = Service::find($appartamento_da_cancellare->service_id);
       $localizzazione_da_cancellare = Geolocal::find($indirizzo_da_cancellare->geolocal_id);
+      // Cancello l'appartamento e le tabelle collegate
       $appartamento_da_cancellare->delete();
       $servizi_da_cancellare->delete();
       $indirizzo_da_cancellare->delete();
