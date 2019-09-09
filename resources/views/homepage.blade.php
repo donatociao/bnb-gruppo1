@@ -33,12 +33,13 @@
           <div class="col-12">
             <div class="title">
               <p>BoolBnB<p>
-            <div class="searchbar">
-              <form class="form my-2 my-lg-0 w-50 mx-auto">
-                <input class="form-control" type="search" placeholder="Cerca appartamenti" aria-label="Search">
-                <button class="btn btn-dark my-2 my-sm-0" type="submit">Cerca</button>
-              </form>
-            </div>
+                <div class="searchbar">
+                  <form class="form my-2 my-lg-0 w-50 mx-auto">
+                    <input class="form-control" type="search" placeholder="Cerca appartamenti" aria-label="Search">
+                    <button class="btn btn-dark my-2 my-sm-0" type="submit">CERCA!</button>
+                  </form>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -49,12 +50,11 @@
         <div class="row">
           <div class="col-md-12">
             <p>I nostri appartamenti:</p>
-          <div
             @foreach ($appartamenti as $appartamento)
-              <div class="container-card col-md-4">
+              <div class="container-card col-md-3">
                 <div class="card-body">
                   <p class="card-title">{{ $appartamento->title }}</p>
-                  <img class="dim-img col-md-12" src="{{ asset($appartamento->url_img) }}" alt=" " class="rounded">
+                  <img class="dim-img col-md-12" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
                 </div>
               </div>
             @endforeach
@@ -64,7 +64,6 @@
     </div>
     <!--FOOTER-->
     <div class="footer-container">
-      <div class="container">
         <div class="row">
           <div class="col-md-12">
             <p class="privacy">Condizioni e privacy:</p>
@@ -88,7 +87,7 @@
             <div class="copyright">© 2019 BoolBnB, Inc. All rights reserved.</div>
           </div>
         </div>
-      </div>
     </div>
+  </div>
   </body>
 </html>
