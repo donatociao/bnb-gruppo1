@@ -10820,14 +10820,12 @@ body {
   background-color: #2d3436;
 }
 
-.navbar-container a {
+.navbar-container .links a {
   color: #1abc9c;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
+  font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .navbar-container a:hover {
@@ -10861,34 +10859,40 @@ body {
   text-transform: uppercase;
 }
 
-.searchbar-container {
-  width: 100%;
+.row {
+  margin-top: 175px;
 }
 
 .form-control {
-  border: 2px solid #636b6f;
+  border-radius: 10px;
+  border: 3px solid #2d3436;
   margin-top: 20px;
-}
-
-.searchbar {
-  margin-top: 340px;
-  border: 2px solid #1abc9c;
-}
-
-.dim-img {
-  height: 140px;
-}
-
-.btn-dark {
-  width: 100px;
+  width: 100%;
   height: 60px;
+  margin-bottom: 20px;
+  margin-left: 40px;
 }
 
-/*DEVICE SX - desktops*/
+.btn.btn-dark {
+  width: 115px;
+  height: 60px;
+  background-color: #2d3436;
+  color: #1abc9c;
+  font-weight: bold;
+  font-size: 20px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  margin: 20px 50px;
+}
 
-/*DEVICES MD - desktops*/
+.btn.btn-dark:hover {
+  color: #fff;
+  border-radius: 10px;
+}
 
-/*DEVICES LG - large desktops*/
+.card-body-b {
+  border: 3px solid #1abc9c;
+}
 
 .header-container {
   text-align: center;
@@ -10924,17 +10928,26 @@ body {
   height: 140px;
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .dim-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .footer-container {
-  max-width: 1260px;
+  max-width: 100%;
   height: 300px;
   margin-top: 40px;
   position: inherit;
   text-align: center;
   font-size: 18px;
-  width: 1263px;
   color: #636b6f;
   font-weight: bold;
-  margin-left: 250px;
+}
+
+.col-md-12 {
+  text-align: center;
 }
 
 .list {
