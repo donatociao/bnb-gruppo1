@@ -75,4 +75,42 @@ $(document).ready(function(){
     $('.lat_input').val('').text('');
     $('.lon_input').val('').text('');
   });
+
+
+// Ricerca appartamento
+  $('.cerca').click(function(){
+
+
+    var dati = $("#query_cerca").val(); //recupera tutti i valori del form automaticamente
+    console.log(dati);
+    $.ajax({
+       type: "GET",
+       // specifico la URL della risorsa da contattare
+       url: "https://api.tomtom.com/search/2/structuredGeocode.json",
+
+       data: {
+         "postalCode" : '',
+         "streetName" : '',
+         "streetNumber" : '',
+         "municipality" : dati,
+         "countryCode" : 'IT',
+         "key" : "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
+      },
+
+      dataType: "json",
+
+      success: function(data){
+       console.log(data);
+       var lat = data.results[0].position.lat;
+       var lon = data.results[0].position.lon;
+       // $('.lat_input').val(lat).text(lat);
+       // $('.lon_input').val(lon).text(lon);
+      },
+
+      error: function(){
+        alert("Chiamata fallita!!!");
+      }
+    });
+  });
+
 });

@@ -5,8 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <p>BoolBnB</p>
+        <a class="navbar-brand pt-0" href="{{ route('homepage') }}">
+            <p>VAI ALLA HOME</p>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">

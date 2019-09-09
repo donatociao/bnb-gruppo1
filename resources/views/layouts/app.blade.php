@@ -18,7 +18,7 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
 
-        <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
+
 
     </head>
     <body class="{{ $class ?? '' }}">
@@ -45,6 +45,7 @@
 
         <!-- Argon JS -->
         {{-- <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script> --}}
+        <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
 
     </body>
 </html>
