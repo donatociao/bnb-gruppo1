@@ -48,13 +48,12 @@ class EmailController extends Controller
 
   public function visualizza_singolaemail($id_email)
   {
-    // Recupero l'appartamento da visualizzare
+
     $dati_messaggio = Message::where('id', $id_email)->first();
-    // Verifico se l'id dell'appartamento è presente nel DB
     if (empty($dati_messaggio)) {
       abort(404);
     }
-    // Recupero gli altri dati dell'appartamento da visualizzare
+
     $dati_appartamento = Apartment::where('id', $dati_messaggio->apartment_id)->first();
     $data = [
       'appartamento' => $dati_appartamento,
