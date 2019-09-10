@@ -1,7 +1,7 @@
 .header-container{
   text-align: center;
   font-size: 43px;
-  height: 1100px;
+  height: 1200px;
   width: 100%;
   background-color: #2d3436;
   padding-top: 10px;
@@ -14,6 +14,9 @@
   .card-title{
     font-size: 20px;
     width: 230px;
+  }
+  .card-title:hover{
+    color: #fff;
   }
 }
 
@@ -29,4 +32,19 @@
 .dim-img {
   width: 230px;
   height: 140px;
+  margin-top: 18px;
+}
+
+.card-body{
+  height: 300px;
+  width: 300px;
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .dim-img{
+    max-width: 100%;
+    height: auto;
+  }
 }
