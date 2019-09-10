@@ -10928,26 +10928,17 @@ body {
   height: 140px;
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .dim-img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 .footer-container {
-  max-width: 100%;
+  max-width: 1260px;
   height: 300px;
   margin-top: 40px;
   position: inherit;
   text-align: center;
   font-size: 18px;
+  width: 1263px;
   color: #636b6f;
   font-weight: bold;
-}
-
-.col-md-12 {
-  text-align: center;
+  margin-left: 250px;
 }
 
 .list {

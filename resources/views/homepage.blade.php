@@ -64,7 +64,7 @@
             @foreach ($appartamenti as $appartamento)
               <div class="container-card col-md-3 col-xs-4">
                 <div class="card-body">
-                  <p class="card-title">{{ $appartamento->title }}</p>
+                  <a class="card-title" href="{{route('public.show', $appartamento->id)}}">{{ $appartamento->title }}</a>
                   <img class="dim-img" alt="Responsive image" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
                 </div>
               </div>

@@ -17,9 +17,9 @@ class NewMessage extends Mailable
 
     private $messaggio;
 
-    public function __construct(Message $nuovo_messaggio)
+    public function __construct($nuovo_messaggio)
     {
-      $this->messaggio=$nuovo_messaggio
+      $this->messaggio=$nuovo_messaggio;
     }
 
     /**
@@ -29,6 +29,6 @@ class NewMessage extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mails.show')->with(['messaggio'=>$this->messaggio]);
     }
 }
