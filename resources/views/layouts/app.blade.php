@@ -31,7 +31,7 @@
 
         <div class="main-content">
             @include('layouts.navbars.navbar')
-            @yield('content')
+            @yield ('content')
         </div>
 
         @guest()
