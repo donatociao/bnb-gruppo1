@@ -2,7 +2,7 @@
 
 
 @section('content')
-  <div class="container mt-4">
+  <div class="container" style="position: relative; top: 120px;">
     <h1>Inserisci un nuovo appartamento</h1>
     @if ($errors->any())
         <div class="alert alert-danger">

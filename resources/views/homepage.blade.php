@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
-    <title>BooldBnB</title>
+    <title>BoolBnB</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!--Css-->
@@ -33,7 +33,7 @@
     <div class="searchbar-container">
       <div class="title">
         <p>BoolBnB<p>
-          <div class="row justify-content-center">
+          <div class="row-search">
             <div class="col-12 col-md-10 col-lg-8">
               <div class="card-body-b row no-gutters align-items-center">
                 <div class="col-auto">

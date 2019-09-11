@@ -2,7 +2,7 @@
 
 
 @section('content')
-  <div class="container mt-5">
+  <div class="container" style="position: relative; top: 120px;">
     <h1 style="font-size: 30px; margin: 30px 0;">Modifica appartamento: {{$appartamento->title}}</h1>
     @if ($errors->any())
         <div class="alert alert-danger">

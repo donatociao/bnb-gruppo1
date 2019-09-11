@@ -1,7 +1,7 @@
 //NAVBAR
 .navbar-container{
   width: 100%;
-  max-height: 70px;
+  max-height: 100px;
   background-color: #2d3436;
   .links a {
     color: #1abc9c;
@@ -13,13 +13,14 @@
 
   a:hover{
     color: #fff;
+    margin-top:5px;
   }
 }
 
 .top-right {
   position: absolute;
-  right: 10px;
   top: 25px;
+  margin-top: 15px;
 }
 
 
@@ -46,9 +47,9 @@
 }
 
 //SEARCHBAR
-
-.row{
-  margin-top: 175px;
+.row-search{
+  margin-left: 294px;
+  margin-top: 343px;
 }
 
 .form-control{
