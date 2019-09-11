@@ -76,41 +76,160 @@ $(document).ready(function(){
     $('.lon_input').val('').text('');
   });
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Ricerca appartamento
-  $('.cerca').click(function(){
+  $('#query_cerca').change(function(){
+   var dati = $(".cerca").val(); //recupera la città inserita
+   console.log(dati);
+   $.ajax({
+      type: "GET",
+      // specifico la URL della risorsa da contattare
+      url: "https://api.tomtom.com/search/2/structuredGeocode.json",
+      data: {
+        "postalCode" : '',
+        "streetName" : '',
+        "streetNumber" : '',
+        "municipality" : dati,
+        "countryCode" : 'IT',
+        "key" : "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
+     },
+     dataType: "json",
+     success: function(data){
+      var lat = data.results[0].position.lat;
+      var lon = data.results[0].position.lon;
+      console.log(lat);
+      $('#lat_search').val(lat).text(lat);
+      $('#lon_search').val(lon).text(lon);
+      console.log(data);
+     },
+     error: function(){
+       alert("Chiamata fallita!!!");
+     }
+   });
+  });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var dati = $("#query_cerca").val(); //recupera tutti i valori del form automaticamente
-    console.log(dati);
-    $.ajax({
-       type: "GET",
-       // specifico la URL della risorsa da contattare
-       url: "https://api.tomtom.com/search/2/structuredGeocode.json",
+ // Chiamata API filtri
+  $('#stanze').change(function(){
+    filtri();
+  });
 
-       data: {
-         "postalCode" : '',
-         "streetName" : '',
-         "streetNumber" : '',
-         "municipality" : dati,
-         "countryCode" : 'IT',
-         "key" : "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
-      },
+  $('#letti').change(function(){
+    filtri();
+  });
 
-      dataType: "json",
+  $('#wc').change(function(){
+    filtri();
+  });
 
-      success: function(data){
-       console.log(data);
-       var lat = data.results[0].position.lat;
-       var lon = data.results[0].position.lon;
-       // $('.lat_input').val(lat).text(lat);
-       // $('.lon_input').val(lon).text(lon);
-      },
+  $('#mq').change(function(){
+    filtri();
+  });
 
-      error: function(){
-        alert("Chiamata fallita!!!");
-      }
-    });
+  $('#wifi').change(function(){
+    if ($("#wifi").prop("checked")) {
+      $("#wifi").val(1);
+    }else {
+      $("#wifi").val(0);
+    }
+    filtri();
+  });
+
+  $('#parking').change(function(){
+    if ($("#parking").prop("checked")) {
+      $("#parking").val(1);
+    }else {
+      $("#parking").val(0);
+    }
+    filtri();
+  });
+
+  $('#pool').change(function(){
+    if ($("#pool").prop("checked")) {
+      $("#pool").val(1);
+    }else {
+      $("#pool").val(0);
+    }
+    filtri();
+  });
+
+  $('#reception').change(function(){
+    if ($("#reception").prop("checked")) {
+      $("#reception").val(1);
+    }else {
+      $("#reception").val(0);
+    }
+    filtri();
+  });
+
+  $('#spa').change(function(){
+    if ($("#spa").prop("checked")) {
+      $("#spa").val(1);
+    }else {
+      $("#spa").val(0);
+    }
+    filtri();
+  });
+
+  $('#sea_view').change(function(){
+    if ($("#sea_view").prop("checked")) {
+      $("#sea_view").val(1);
+    }else {
+      $("#sea_view").val(0);
+    }
+    filtri();
   });
 
 });
+
+
+
+// Funzione chiamata ajax per filtrare appartamenti
+function filtri() {
+  var stanze = $("#stanze").val();
+  var letti = $("#letti").val();
+  var wc = $("#wc").val();
+  var mq = $("#mq").val();
+  var wifi = $("#wifi").val();
+  var parking = $("#parking").val();
+  var pool = $("#pool").val();
+  var reception = $("#reception").val();
+  var spa = $("#spa").val();
+  var sea_view = $("#sea_view").val();
+  var latitudine = $("#latitudine").val();
+  var longitudine = $("#longitudine").val();
+  $.ajax({
+     // specifico la URL della risorsa da contattare
+     url: "http://localhost:8888/esercizi/bnb-gruppo1.git/public/api/apartments",
+     method: 'GET',
+     data: {
+       "rooms_number" : stanze,
+       "host_number" : letti,
+       "wc_number" : wc,
+       "mq" : mq,
+       "wifi" : wifi,
+       "parking" : parking,
+       "pool" : pool,
+       "reception" : reception,
+       "spa" : spa,
+       "sea_view" : sea_view,
+       "lat_search" : latitudine,
+       "lon_search" : longitudine
+     },
+
+    dataType: "json",
+
+    success: function(data){
+     console.log(data);
+
+     //
+
+    },
+
+    error: function(){
+      alert("Chiamata fallita!!!");
+    }
+  });
+}

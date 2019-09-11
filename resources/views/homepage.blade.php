@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!--Css-->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
+
   </head>
   <body>
     <!--NAVBAR TOP-->
@@ -37,12 +39,17 @@
                 <div class="col-auto">
                     <i class="fas fa-search h4 text-body"></i>
                 </div>
-                <div class="col">
-                    <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Inserisci la città...">
-                </div>
-                <div class="col-auto">
-                    <button class="btn btn-dark" type="submit">Cerca</button>
-                </div>
+                <form class="" action="{{route('search')}}" method="get">
+                  @csrf
+                  <div class="col">
+                      <input id="query_cerca" class="cerca form-control-lg form-control-borderless" type="search" placeholder="Inserisci la città...">
+                  </div>
+                  <input style="display: none" id="lat_search" type="text" name="lat_search" class="form-control" value="" placeholder="">
+                  <input style="display: none" id="lon_search" type="text" name="lon_search" class="form-control" value="" placeholder="">
+                  <div class="col-auto">
+                      <button class="btn btn-dark" type="submit">Cerca</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

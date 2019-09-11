@@ -49251,10 +49251,11 @@ $(document).ready(function () {
   $('.modCoordinate').keydown(function () {
     $('.lat_input').val('').text('');
     $('.lon_input').val('').text('');
-  }); // Ricerca appartamento
+  }); ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Ricerca appartamento
 
-  $('.cerca').click(function () {
-    var dati = $("#query_cerca").val(); //recupera tutti i valori del form automaticamente
+  $('#query_cerca').change(function () {
+    var dati = $(".cerca").val(); //recupera la città inserita
 
     console.log(dati);
     $.ajax({
@@ -49271,17 +49272,128 @@ $(document).ready(function () {
       },
       dataType: "json",
       success: function success(data) {
-        console.log(data);
         var lat = data.results[0].position.lat;
-        var lon = data.results[0].position.lon; // $('.lat_input').val(lat).text(lat);
-        // $('.lon_input').val(lon).text(lon);
+        var lon = data.results[0].position.lon;
+        console.log(lat);
+        $('#lat_search').val(lat).text(lat);
+        $('#lon_search').val(lon).text(lon);
+        console.log(data);
       },
       error: function error() {
         alert("Chiamata fallita!!!");
       }
     });
+  }); //////////////////////////////////////////////////////////////////////////////////////////////////
+  // Chiamata API filtri
+
+  $('#stanze').change(function () {
+    filtri();
   });
-});
+  $('#letti').change(function () {
+    filtri();
+  });
+  $('#wc').change(function () {
+    filtri();
+  });
+  $('#mq').change(function () {
+    filtri();
+  });
+  $('#wifi').change(function () {
+    if ($("#wifi").prop("checked")) {
+      $("#wifi").val(1);
+    } else {
+      $("#wifi").val(0);
+    }
+
+    filtri();
+  });
+  $('#parking').change(function () {
+    if ($("#parking").prop("checked")) {
+      $("#parking").val(1);
+    } else {
+      $("#parking").val(0);
+    }
+
+    filtri();
+  });
+  $('#pool').change(function () {
+    if ($("#pool").prop("checked")) {
+      $("#pool").val(1);
+    } else {
+      $("#pool").val(0);
+    }
+
+    filtri();
+  });
+  $('#reception').change(function () {
+    if ($("#reception").prop("checked")) {
+      $("#reception").val(1);
+    } else {
+      $("#reception").val(0);
+    }
+
+    filtri();
+  });
+  $('#spa').change(function () {
+    if ($("#spa").prop("checked")) {
+      $("#spa").val(1);
+    } else {
+      $("#spa").val(0);
+    }
+
+    filtri();
+  });
+  $('#sea_view').change(function () {
+    if ($("#sea_view").prop("checked")) {
+      $("#sea_view").val(1);
+    } else {
+      $("#sea_view").val(0);
+    }
+
+    filtri();
+  });
+}); // Funzione chiamata ajax per filtrare appartamenti
+
+function filtri() {
+  var stanze = $("#stanze").val();
+  var letti = $("#letti").val();
+  var wc = $("#wc").val();
+  var mq = $("#mq").val();
+  var wifi = $("#wifi").val();
+  var parking = $("#parking").val();
+  var pool = $("#pool").val();
+  var reception = $("#reception").val();
+  var spa = $("#spa").val();
+  var sea_view = $("#sea_view").val();
+  var latitudine = $("#latitudine").val();
+  var longitudine = $("#longitudine").val();
+  $.ajax({
+    // specifico la URL della risorsa da contattare
+    url: "http://localhost:8888/esercizi/bnb-gruppo1.git/public/api/apartments",
+    method: 'GET',
+    data: {
+      "rooms_number": stanze,
+      "host_number": letti,
+      "wc_number": wc,
+      "mq": mq,
+      "wifi": wifi,
+      "parking": parking,
+      "pool": pool,
+      "reception": reception,
+      "spa": spa,
+      "sea_view": sea_view,
+      "lat_search": latitudine,
+      "lon_search": longitudine
+    },
+    dataType: "json",
+    success: function success(data) {
+      console.log(data); //
+    },
+    error: function error() {
+      alert("Chiamata fallita!!!");
+    }
+  });
+}
 
 /***/ }),
 
@@ -49430,8 +49542,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
