@@ -15,13 +15,54 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 
     <!--Css -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
   <body>
+    <!--NAVBAR TOP-->
+    <div class="navbar-container">
+      <div class="flex-center position-ref full-height">
+          @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    <a href="{{ url('/home') }}">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}">Accedi</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Registrati</a>
+                    @endif
+                @endauth
+            </div>
+          @endif
+      </div>
+    </div>
       @yield('content')
-
-
+      <!--FOOTER-->
+      <div class="footer-container">
+        <div class="col-md-12">
+          <p class="privacy-con">Condizioni e privacy:</p>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="list">
+            <ul class="list-unstyled">
+              <li>
+                <a href="">Condizioni</a>
+              </li>
+              <li>
+                <a href="">Opportunità di lavoro</a>
+              </li>
+              <li>
+                <a href="">Aiuto</a>
+              </li>
+              <li>
+                <a href="">News</a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright">© 2019 BoolBnB, Inc. All rights reserved.</div>
+        </div>
+      </div>
   </body>
 </html>
