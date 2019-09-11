@@ -31,7 +31,7 @@
     <div class="searchbar-container">
       <div class="title">
         <p>BoolBnB<p>
-          <div class="row justify-content-center">
+          <div class="row-search">
             <div class="col-12 col-md-10 col-lg-8">
               <div class="card-body-b row no-gutters align-items-center">
                 <div class="col-auto">
