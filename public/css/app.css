@@ -11060,7 +11060,7 @@ a:hover {
 
 .container-email {
   width: 100%;
-  height: 700px;
+  height: 750px;
   background-color: #1abc9c;
   padding: 50px;
 }
@@ -11077,7 +11077,7 @@ h2 {
   font-weight: bold;
   width: 550px;
   text-align: center;
-  margin-left: 53px;
+  margin-left: 45px;
 }
 
 label {
@@ -11101,5 +11101,22 @@ label {
 .btn-h-e.btn-dark:hover {
   color: #fff;
   border-radius: 10px;
+}
+
+.container-maps {
+  width: 600px;
+  float: left;
+}
+
+.map {
+  width: 700px;
+  height: 540px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 3px solid #2d3436;
+}
+
+h2 {
+  margin-bottom: 40px;
 }
 

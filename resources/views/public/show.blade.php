@@ -1,4 +1,5 @@
 @extends(Auth::user() ? 'layouts.app' : 'layouts.app_public')
+
 @section('content')
 <div class="container-apartment">
     <div class="row justify-content-center">
@@ -95,6 +96,12 @@
     </div>
 </div>
 <div class="container-email">
+  <div class="container-maps">
+    <h2>Mappa:</h2>
+    <div class="map">
+  
+    </div>
+  </div>
   <div class="container-form">
   @if (Auth::check() && Auth::user()->email === $utente->email)
     <p>Sei il proprietario dell'appartamento.</p>
