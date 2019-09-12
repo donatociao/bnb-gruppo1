@@ -49239,7 +49239,8 @@ function genera_card(informazioni) {
         "piscina": informazioni.result[i].pool,
         "portineria": informazioni.result[i].reception,
         "sauna": informazioni.result[i].spa,
-        "vista_mare": informazioni.result[i].sea_view
+        "vista_mare": informazioni.result[i].sea_view,
+        "distanza": informazioni.result[i].distance
       };
       var html = template(context);
       $(".container").append(html);

@@ -81,6 +81,7 @@
             Portineria: {{$appartamento->reception}}
             Sauna: {{$appartamento->spa}}
             Vista mare: {{$appartamento->sea_view}}
+            Distanza: {{$appartamento->distance}}
           @endif
         </div>
         <br>
@@ -106,6 +107,7 @@
         Portineria: @{{portineria}}
         Sauna: @{{sauna}}
         Vista mare: @{{vista_mare}}
+        Distanza: @{{distanza}}
       </div>
       <br>
     </script>
