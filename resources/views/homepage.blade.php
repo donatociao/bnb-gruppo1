@@ -52,16 +52,6 @@
           </div>
         </div>
       </div>
-  <!--HEADER-->
-  {{-- <div class="container">
-    <div class="row">
-      <div class="col">
-
-      </div>
-    </div>
-  </div> --}}
-
-
 
       <div class="header-container">
         <div class="container">
