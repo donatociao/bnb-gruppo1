@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
-    <title>BoolBnB</title>
+    <title>BooldBnB</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!--Css-->
@@ -33,7 +33,7 @@
     <div class="searchbar-container">
       <div class="title">
         <p>BoolBnB<p>
-          <div class="row-search">
+          <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
               <div class="card-body-b row no-gutters align-items-center">
                 <div class="col-auto">
@@ -42,7 +42,7 @@
                 <form class="" action="{{route('search')}}" method="get">
                   @csrf
                   <div class="col">
-                      <input id="query_cerca" class="cerca form-control-lg form-control-borderless" type="search" placeholder="Inserisci la città...">
+                      <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless" type="search" placeholder="Inserisci la città...">
                   </div>
                   <input style="display: none" id="lat_search" type="text" name="lat_search" class="form-control" value="" placeholder="">
                   <input style="display: none" id="lon_search" type="text" name="lon_search" class="form-control" value="" placeholder="">

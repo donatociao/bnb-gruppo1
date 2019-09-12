@@ -93,51 +93,6 @@ class ApartmentsController extends Controller
 
     public function show($id_apartment)
     {
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-      $query = DB::table('geolocals')->select('*')->get();
-      $ok =[];
-      $i = 0;
-
-      foreach ($query as $value) {
-
-        $latitudeFrom = 40.6803601;
-        $longitudeFrom = 14.7594542;
-        $latitudeTo = $value->latitude;
-        $longitudeTo = $value->longitude;
-        $earthRadius = 6371000;
-
-        // convert from degrees to radians
-        $latFrom = deg2rad($latitudeFrom);
-        $lonFrom = deg2rad($longitudeFrom);
-        $latTo = deg2rad($latitudeTo);
-        $lonTo = deg2rad($longitudeTo);
-
-        $lonDelta = $lonTo - $lonFrom;
-        $a = pow(cos($latTo) * sin($lonDelta), 2) +
-          pow(cos($latFrom) * sin($latTo) - sin($latFrom) * cos($latTo) * cos($lonDelta), 2);
-        $b = sin($latFrom) * sin($latTo) + cos($latFrom) * cos($latTo) * cos($lonDelta);
-
-        $angle = atan2(sqrt($a), $b);
-        $distance = $angle * $earthRadius;
-        if ($distance <= 540000) {
-          $ok[$i] = $value->id;
-          $i++;
-        }
-        // dump($ok);
-      }
-      // dd($ok);
-      $nel_raggio = DB::table('apartments')->join('services', 'services.id', '=', 'apartments.service_id')
-                                           ->join('addresses', 'addresses.id', '=', 'apartments.address_id')
-                                           ->join('geolocals', 'geolocals.id', '=', 'addresses.geolocal_id')
-                                           ->whereIn('geolocal_id', $ok)
-                                           ->get();
-      dd($nel_raggio);
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
       // Recupero l'appartamento da visualizzare
       $dati_appartamento = Apartment::where('id', $id_apartment)->first();
       // Verifico se l'id dell'appartamento è presente nel DB
