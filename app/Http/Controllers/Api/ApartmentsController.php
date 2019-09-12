@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Apartment;
 use Illuminate\Support\Facades\DB;
+use App\Geolocal;
 
 
 
@@ -20,8 +21,7 @@ class ApartmentsController extends Controller
     };
 
     $query = DB::table('geolocals')->select('*')->get();
-    $ok =[];
-    $i = 0;
+
 
     foreach ($query as $value) {
 
@@ -44,12 +44,12 @@ class ApartmentsController extends Controller
 
       $angle = atan2(sqrt($a), $b);
       $distance = $angle * $earthRadius;
-      if ($distance <= $request->km) {
-        $ok[$i] = $value->id;
-        $i++;
-      }
-    }
 
+      $distanza_da_modificare = Geolocal::find($value->id);
+      $distanza_da_modificare->distance = $distance;
+      $distanza_da_modificare->update();
+
+    }
 
     if (is_null($request->rooms_number)) {
       $request->rooms_number = -1;
@@ -85,8 +85,8 @@ class ApartmentsController extends Controller
     $apartments =  DB::table('apartments')->join('services', 'services.id', '=', 'apartments.service_id')
                                           ->join('addresses', 'addresses.id', '=', 'apartments.address_id')
                                           ->join('geolocals', 'geolocals.id', '=', 'addresses.geolocal_id')
-                                          ->whereIn('geolocal_id', $ok)
                                           ->where([
+                                              ['distance', '<=', $request->km],
                                               ['rooms_number', '>=', $request->rooms_number],
                                               ['host_number', '>=', $request->host_number],
                                               ['wc_number', '>=', $request->wc_number],
@@ -97,7 +97,9 @@ class ApartmentsController extends Controller
                                               ['reception', '>=', $request->reception],
                                               ['spa', '>=', $request->spa],
                                               ['sea_view', '>=', $request->sea_view]
-                                            ])->get();
+                                            ])
+                                            ->orderBy('distance', 'asc')
+                                            ->get();
 
     return response()->json([
         'success' => true,

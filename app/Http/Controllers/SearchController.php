@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Geolocal;
+
 
 class SearchController extends Controller
 {
     public function index(Request $Request) {
+
       $query = DB::table('geolocals')->select('*')->get();
-      $ok =[];
-      $i = 0;
+
 
       foreach ($query as $value) {
 
@@ -33,15 +35,17 @@ class SearchController extends Controller
 
         $angle = atan2(sqrt($a), $b);
         $distance = $angle * $earthRadius;
-        if ($distance <= 20000) {
-          $ok[$i] = $value->id;
-          $i++;
-        }
+
+        $distanza_da_modificare = Geolocal::find($value->id);
+        $distanza_da_modificare->distance = $distance;
+        $distanza_da_modificare->update();
       }
+
       $nel_raggio = DB::table('apartments')->join('services', 'services.id', '=', 'apartments.service_id')
                                            ->join('addresses', 'addresses.id', '=', 'apartments.address_id')
                                            ->join('geolocals', 'geolocals.id', '=', 'addresses.geolocal_id')
-                                           ->whereIn('geolocal_id', $ok)
+                                           ->where('distance', '<=', 20000)
+                                           ->orderBy('distance', 'asc')
                                            ->get();
 
     $data = [
