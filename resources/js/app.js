@@ -202,7 +202,7 @@ function filtri() {
   var longitudine = $("#longitudine").val();
   $.ajax({
      // specifico la URL della risorsa da contattare
-     url: "http://localhost:8888/esercizi/bnb-gruppo1.git/public/api/apartments",
+     url: "http://localhost:8000/api/apartments",
      method: 'GET',
      data: {
        "rooms_number" : stanze,

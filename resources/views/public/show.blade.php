@@ -1,4 +1,4 @@
-@extends(Auth::user() ? 'layouts.app' : 'layouts.app_public')
+@extends('layouts.app_public')
 
 @section('content')
 <div class="container-apartment">
@@ -99,7 +99,7 @@
   <div class="container-maps">
     <h2>Mappa:</h2>
     <div class="map">
-  
+
     </div>
   </div>
   <div class="container-form">
@@ -117,7 +117,7 @@
 
         <label for="exampleInputEmail1">Indirizzo Email:</label>
         @if (Auth::check())
-          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$utente->email}}">
+          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{Auth::user()->email}}">
         @else
           <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
         @endif

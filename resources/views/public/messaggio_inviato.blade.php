@@ -1,4 +1,4 @@
-@extends(Auth::user() ? 'layouts.app' : 'layouts.app_public')
+@extends('layouts.app_public')
 
 @section('content')
 <div class="container">

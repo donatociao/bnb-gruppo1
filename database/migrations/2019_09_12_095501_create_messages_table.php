@@ -17,7 +17,12 @@ class CreateMessagesTable extends Migration
           $table->increments('id');
           $table->text('message');
           $table->string('email_req');
+          $table->integer('user_id')->unsigned()->nullable();
+          $table->integer('apartment_id')->unsigned()->nullable();
           $table->timestamps();
+
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+          $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
         });
     }
 
