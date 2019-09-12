@@ -104,7 +104,7 @@
         </div>
     </div>
 </div>
-<div class="container container-email">
+<div class="container container-email col-lg-12 col-md-12 col-sm-12">
     <h2>Mappa:</h2>
     <div class="map">
 
@@ -124,16 +124,16 @@
 
         <label for="exampleInputEmail1">Indirizzo Email:</label>
         @if (Auth::check())
-          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$utente->email}}">
+          <input type="email" name="email_req" class="form form-control col-lg-12 col-md-12 col-sm-12" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$utente->email}}">
         @else
-          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+          <input type="email" name="email_req" class="form form-control col-lg-12 col-md-12 col-sm-12" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
         @endif
-      </div>
-      <div class="form-group">
         <label for="exampleFormControlTextarea1">Messaggio:</label>
         <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+      <div class="btn btn-container">
+        <button type="submit" class="btn-h-e btn-dark col-lg-12 col-md-12 col-sm-12">Invia</button>
       </div>
-      <button type="submit" class="btn-h-e btn-dark">Invia</button>
+    </div>
     </form>
   @endif
 </div>

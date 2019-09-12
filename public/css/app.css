@@ -10868,9 +10868,9 @@ body {
 .form-control {
   border-radius: 10px;
   border: 3px solid #2d3436;
-  margin-top: 20px;
-  height: 60px;
-  margin-bottom: 20px;
+  height: 50px;
+  width: 500px;
+  display: inline-block;
 }
 
 .btn.btn-dark {
@@ -10970,7 +10970,7 @@ body {
 
 .container-description {
   float: left;
-  margin-left: 48px;
+  margin-left: 55px;
   margin-top: 28px;
   max-width: 500px;
   margin-bottom: 20px;
@@ -11054,7 +11054,7 @@ a:hover {
 }
 
 .privacy-con {
-  font-size: 43px;
+  font-size: 37px;
 }
 
 .copyright {
@@ -11069,9 +11069,13 @@ a:hover {
   padding: 50px;
 }
 
+.map {
+  margin-left: 10px;
+}
+
 .container-form {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: auto;
   margin-top: 80px;
   margin: auto;
 }
@@ -11091,7 +11095,7 @@ label {
 }
 
 .btn-h-e.btn-dark {
-  width: 100%;
+  width: 110px;
   height: 60px;
   background-color: #2d3436;
   color: #1abc9c;
@@ -11113,11 +11117,12 @@ label {
 }
 
 .map {
-  width: 100%;
-  height: 540px;
+  width: 700px;
+  height: 520px;
   background-color: #fff;
   border-radius: 10px;
   border: 3px solid #2d3436;
+  display: inline-block;
 }
 
 h2 {
