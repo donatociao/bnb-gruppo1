@@ -27,6 +27,10 @@
     @endforeach
 
     <div class="form-group">
+      <label for="km">Entro km:</label>
+      <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci numero minimo di stanze" value="">
+    </div>
+    <div class="form-group">
       <label for="rooms_number">Numero minimo di stanze:</label>
       <input type="number" id="stanze" class="form-control" name="rooms_number" placeholder="Inserisci numero minimo di stanze" value="">
     </div>

@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\DB;
 class ApartmentsController extends Controller
 {
   public function index(Request $request) {
+
+    if (is_null($request->km)) {
+      $request->km = 20000;
+    }else {
+      $request->km = $request->km * 1000;
+    };
+
     $query = DB::table('geolocals')->select('*')->get();
     $ok =[];
     $i = 0;
@@ -37,7 +44,7 @@ class ApartmentsController extends Controller
 
       $angle = atan2(sqrt($a), $b);
       $distance = $angle * $earthRadius;
-      if ($distance <= 20000) {
+      if ($distance <= $request->km) {
         $ok[$i] = $value->id;
         $i++;
       }

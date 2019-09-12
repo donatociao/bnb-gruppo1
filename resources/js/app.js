@@ -113,6 +113,10 @@ $(document).ready(function(){
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
  // Chiamata API filtri
+   $('#km').change(function(){
+     filtri();
+   });
+
   $('#stanze').change(function(){
     filtri();
   });
@@ -189,6 +193,7 @@ $(document).ready(function(){
 
 // Funzione chiamata ajax per filtrare appartamenti
 function filtri() {
+  var km = $("#km").val();
   var stanze = $("#stanze").val();
   var letti = $("#letti").val();
   var wc = $("#wc").val();
@@ -206,6 +211,7 @@ function filtri() {
      url: "http://localhost:8000/api/apartments",
      method: 'GET',
      data: {
+       "km" : km,
        "rooms_number" : stanze,
        "host_number" : letti,
        "wc_number" : wc,

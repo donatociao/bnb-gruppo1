@@ -49101,6 +49101,9 @@ $(document).ready(function () {
   }); //////////////////////////////////////////////////////////////////////////////////////////////////
   // Chiamata API filtri
 
+  $('#km').change(function () {
+    filtri();
+  });
   $('#stanze').change(function () {
     filtri();
   });
@@ -49170,6 +49173,7 @@ $(document).ready(function () {
 }); // Funzione chiamata ajax per filtrare appartamenti
 
 function filtri() {
+  var km = $("#km").val();
   var stanze = $("#stanze").val();
   var letti = $("#letti").val();
   var wc = $("#wc").val();
@@ -49187,6 +49191,7 @@ function filtri() {
     url: "http://localhost:8000/api/apartments",
     method: 'GET',
     data: {
+      "km": km,
       "rooms_number": stanze,
       "host_number": letti,
       "wc_number": wc,
@@ -49319,8 +49324,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/carmelina/Desktop/bnb-master/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/carmelina/Desktop/bnb-master/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
