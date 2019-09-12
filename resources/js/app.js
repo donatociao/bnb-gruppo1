@@ -113,23 +113,23 @@ $(document).ready(function(){
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
  // Chiamata API filtri
-   $('#km').change(function(){
+   $('#km').keyup(function(){
      filtri();
    });
 
-  $('#stanze').change(function(){
+  $('#stanze').keyup(function(){
     filtri();
   });
 
-  $('#letti').change(function(){
+  $('#letti').keyup(function(){
     filtri();
   });
 
-  $('#wc').change(function(){
+  $('#wc').keyup(function(){
     filtri();
   });
 
-  $('#mq').change(function(){
+  $('#mq').keyup(function(){
     filtri();
   });
 
@@ -231,7 +231,7 @@ function filtri() {
     success: function(data){
      console.log(data);
 
-     //
+     genera_card(data);
 
     },
 
@@ -240,6 +240,33 @@ function filtri() {
     }
   });
 }
+
+
+
+// //////////////Handlebars Ricerca////////////////////////
+// Genero il template
+var card_appartamento = $("#card").html();
+var template = Handlebars.compile(card_appartamento);
+// Funzione che genera le cards e le inserisce nell'html
+  $(".container").empty();
+  for (var i = 0; i < informazioni.result.length; i++) {
+    if (informazioni.result[i].public) {
+      var context = {
+        "titolo": informazioni.result[i].title,
+        "citta": informazioni.result[i].city,
+
+        // INSERIRE ALTRI VALORI
+
+      }
+      var html = template(context);
+      $(".container").append(html);
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
 
 //mappa
 $('#mappa').click(function(){

@@ -3,29 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
   </head>
   <body>
 
-    @foreach ($appartamenti as $appartamento)
-      TITOLO: {{$appartamento->title}}
-      CITTA': {{$appartamento->city}}
-      NUMERO CIVICO: {{$appartamento->civic_number}}
-      NUMERO STANZE: {{$appartamento->rooms_number}}
-      NUMERO LETTI: {{$appartamento->host_number}}
-      NUMERO BAGNI: {{$appartamento->wc_number}}
-      METRI QUADRI: {{$appartamento->mq}}
-      wifi: {{$appartamento->wifi}}
-      Parcheggio: {{$appartamento->parking}}
-      Piscina: {{$appartamento->pool}}
-      Portineria: {{$appartamento->reception}}
-      Sauna: {{$appartamento->spa}}
-      Vista mare: {{$appartamento->sea_view}}
-
-      <br>
-      <br>
-    @endforeach
-
+    {{-- FILTRI --}}
     <div class="form-group">
       <label for="km">Entro km:</label>
       <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci numero minimo di stanze" value="">
@@ -75,8 +56,55 @@
       <input  id="latitudine" type="text"  name="latitude" value="{{$latitudine}}">
       <input id="longitudine" type="text"  name="latitude" value="{{$longitudine}}">
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    {{-- CONTAINER INIZIALE CHE POI VIENE SOSTITUITO CON LE CARD DI HANDLEBARS SE SI ATTIVA QUALCHE FILTRO --}}
+    <div class="container">
+      @foreach ($appartamenti as $appartamento)
+        <div>
+          @if ($appartamento->public)
+            {{-- FOTO : <img src="{{ asset('storage/'. $appartamento->url_img) }}"> --}}
+            TITOLO: {{$appartamento->title}}
+            CITTA': {{$appartamento->city}}
+            NUMERO CIVICO: {{$appartamento->civic_number}}
+            NUMERO STANZE: {{$appartamento->rooms_number}}
+            NUMERO LETTI: {{$appartamento->host_number}}
+            NUMERO BAGNI: {{$appartamento->wc_number}}
+            METRI QUADRI: {{$appartamento->mq}}
+            wifi: {{$appartamento->wifi}}
+            Parcheggio: {{$appartamento->parking}}
+            Piscina: {{$appartamento->pool}}
+            Portineria: {{$appartamento->reception}}
+            Sauna: {{$appartamento->spa}}
+            Vista mare: {{$appartamento->sea_view}}
+          @endif
+        </div>
+        <br>
+      @endforeach
+    </div>
+
+
+    {{-- SCRIPT DI HANDLEBARS --}}
+    <script id="card" type="text/x-handlebars-template">
+      <div>
+        TITOLO: @{{titolo}}
+        CITTA': @{{citta}}
+
+        <!-- Inserire altri valori -->
+
+      </div>
+      <br>
+      <br>
+    </script>
 
 
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
   </body>
 </html>
