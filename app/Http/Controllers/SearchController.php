@@ -50,6 +50,6 @@ class SearchController extends Controller
       'longitudine' => $Request->lon_search
     ];
 
-    return view('search', $data);
+    return view('public.search', $data);
   }
 }

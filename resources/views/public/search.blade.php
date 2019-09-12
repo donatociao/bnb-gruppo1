@@ -75,7 +75,7 @@
             NUMERO LETTI: {{$appartamento->host_number}}
             NUMERO BAGNI: {{$appartamento->wc_number}}
             METRI QUADRI: {{$appartamento->mq}}
-            wifi: {{$appartamento->wifi}}
+            Wifi: {{$appartamento->wifi}}
             Parcheggio: {{$appartamento->parking}}
             Piscina: {{$appartamento->pool}}
             Portineria: {{$appartamento->reception}}
@@ -88,19 +88,27 @@
     </div>
 
 
+
     {{-- SCRIPT DI HANDLEBARS --}}
     <script id="card" type="text/x-handlebars-template">
       <div>
+        <!-- FOTO: -->
         TITOLO: @{{titolo}}
         CITTA': @{{citta}}
-
-        <!-- Inserire altri valori -->
-
+        NUMERO CIVICO: @{{numero_civico}}
+        NUMERO STANZE: @{{numero_stanze}}
+        NUMERO LETTI: @{{numero_letti}}
+        NUMERO BAGNI: @{{numero_bagni}}
+        METRI QUADRI: @{{metri_quadri}}
+        Wifi: @{{wifi}}
+        Parcheggio: @{{parcheggio}}
+        Piscina: @{{piscina}}
+        Portineria: @{{portineria}}
+        Sauna: @{{sauna}}
+        Vista mare: @{{vista_mare}}
       </div>
       <br>
-      <br>
     </script>
-
 
 
 

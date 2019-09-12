@@ -36,7 +36,7 @@
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-8">
               <div class="card-body-b row no-gutters align-items-center">
-                <form class="" action="{{route('search')}}" method="get">
+                <form class="" action="{{route('public.search')}}" method="get">
                   @csrf
                   <div class="col-sm-12 col-md-12 col-lg-12">
                       <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless col-s-12 col-md-12" type="search" placeholder="Inserisci la città...">

@@ -12,6 +12,8 @@
 */
 Route::get('/', 'HomepageController@index')->name('homepage');
 Route::get('show/{id}','HomepageController@show')->name('public.show');
+Route::get('/search', 'SearchController@index')->name('public.search'); // Rotta pagina di ricerca
+
 
 Route::get('/show','EmailController@contatta_host')->name('show.form');
 Route::post('/show','EmailController@invio_messaggio')->name('show.store');
@@ -34,6 +36,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/mails','EmailController@visualizza_email')->name('mails.index');
 	Route::get('/mails/{id}','EmailController@visualizza_singolaemail')->name('mails.show');
 });
-
-// Rotta pagina di ricerca
-Route::get('/search', 'SearchController@index')->name('search');
