@@ -20,27 +20,27 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-const app = new Vue({
-    el: '#app',
-});
+//
+// const app = new Vue({
+//     el: '#app',
+// });
 
 
 //AJAX Geolocalizzazione
 $(document).ready(function(){
 
- $('.invio').click(function(){
+ $('#calculate').change(function(){
 
 
    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente
-
+   console.log(dati);
    $.ajax({
       type: "GET",
       // specifico la URL della risorsa da contattare
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 // Ricerca appartamento
   $('#query_cerca').change(function(){
-   var dati = $(".cerca").val(); //recupera la città inserita
+   var dati = $("#query_cerca").val(); //recupera la città inserita
    console.log(dati);
    $.ajax({
       type: "GET",
@@ -99,9 +99,10 @@ $(document).ready(function(){
       var lat = data.results[0].position.lat;
       var lon = data.results[0].position.lon;
       console.log(lat);
+      console.log(lon);
       $('#lat_search').val(lat).text(lat);
       $('#lon_search').val(lon).text(lon);
-      console.log(data);
+
      },
      error: function(){
        alert("Chiamata fallita!!!");
@@ -233,3 +234,36 @@ function filtri() {
     }
   });
 }
+
+//mappa
+$('#mappa').click(function(){
+ var centro_lat = $("#lat_map").val();  //recupera la latitudine
+ var centro_lon = $("#lon_map").val(); //recupera la longitudine
+ console.log(centro_lat);
+ console.log(centro_lon);
+ var centro = [centro_lat , centro_lon];
+ console.log(centro);
+ $.ajax({
+    type: "GET",
+    // specifico la URL della risorsa da contattare
+    url: "https://api.tomtom.com/map/1/staticimage",
+    data: {
+      "versionNumber" : '1',
+      "center" : centro_lat+','+centro_lon,
+      "width" : '512',
+      "height" : '512',
+      "key" : "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
+   },
+
+
+   success: function(data){
+
+     console.log(data);
+     $('.mappa_div').html('<img src="data:image/png;base64,'+data+'" />');
+     // $('.mappa_div').html("<img src='mamt'/>");
+   },
+   error: function(){
+     alert("Chiamata fallita!!!");
+   }
+ });
+});

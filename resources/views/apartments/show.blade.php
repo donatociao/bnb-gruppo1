@@ -9,7 +9,10 @@
                 ID: {{$appartamento->id}}
               </div>
               <div class="">
-                Titolo: {{$appartamento->title}}
+                <h1>{{$appartamento->title}}</h1>
+              </div>
+              <div class="" style="height: 250px; width: 250px;">
+                <img style="width: 100%;" src="{{ asset('storage/'. $appartamento->url_img) }}">
               </div>
               <div class="">
                 Numero stanze: {{$appartamento->rooms_number}}
@@ -23,79 +26,85 @@
               <div class="">
                 Metri quadri: {{$appartamento->mq}}
               </div>
+
               <div class="">
-                Foto appartamento: <img src="{{ asset('storage/'. $appartamento->url_img) }}">
+                Indirizzo: {{$indirizzo->city}}, {{$indirizzo->street}}, {{$indirizzo->civic_number}} - {{$indirizzo->cap}}
               </div>
-              <div class="">
-                Indirizzo: {{$indirizzo->city}}
-              </div>
-              <div class="">
-                CAP: {{$indirizzo->cap}}
-              </div>
+
               <div class="">
                 Provincia: {{$indirizzo->prov}}
               </div>
-              <div class="">
-                Via: {{$indirizzo->street}}
+
+              <div class="d-none">
+                Latitudine: <input id="lat_map" type="text" value="{{$localizzazione->latitude}}">
               </div>
-              <div class="">
-                Numero civico: {{$indirizzo->civic_number}}
+              <div class="d-none">
+                Longitudine: <input id="lon_map" type="text" value="{{$localizzazione->longitude}}">
               </div>
-              <div class="">
-                Latitudine: {{$localizzazione->latitude}}
+
+              <div class="mappa_div">
+                <button id="mappa" type="button" name="button">Vedi mappa</button>
+                <img src="" alt="">
               </div>
-              <div class="">
-                Longitudine: {{$localizzazione->longitude}}
-              </div>
-              <div class="">
-                @if ($servizi->wifi == 1)
-                  WiFi: Si
-                @else
-                  WiFi: No
-                @endif
-              </div>
-              <div class="">
-                @if ($servizi->parking == 1)
-                  Parcheggio: Si
-                @else
-                  Parcheggio: No
-                @endif
-              </div>
-              <div class="">
-                @if ($servizi->pool == 1)
-                  Piscina: Si
-                @else
-                  Piscina: No
-                @endif
-              </div>
-              <div class="">
-                @if ($servizi->reception == 1)
-                  Portineria: Si
-                @else
-                  Portineria: No
-                @endif
-              </div>
-              <div class="">
-                @if ($servizi->spa == 1)
-                  Sauna: Si
-                @else
-                  Sauna: No
-                @endif
-              </div>
-              <div class="">
-                @if ($servizi->sea_view == 1)
-                  Vista mare: Si
-                @else
-                  Vista mare: No
-                @endif
-              </div>
-              <div class="">
-                @if ($appartamento->public == 1)
-                  Visibilità nei risultati di ricerca: Si
-                @else
-                  Visibilità nei risultati di ricerca: No
-                @endif
-              </div>
+              <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Wi-Fi</th>
+      <th scope="col">Parking</th>
+      <th scope="col">Piscina</th>
+      <th scope="col">Portineria</th>
+      <th scope="col">Sauna</th>
+      <th scope="col">Vista mare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        @if ($servizi->wifi == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </th>
+      <td>
+        @if ($servizi->parking == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </td>
+      <td>
+        @if ($servizi->pool == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </td>
+      <td>
+        @if ($servizi->reception == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </td>
+      <td>
+        @if ($servizi->spa == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </td>
+      <td>
+        @if ($servizi->sea_view == 1)
+          <i class="far text-success fa-check-circle fa-2x"></i>
+        @else
+          <i class="far text-danger fa-times-circle fa-2x"></i>
+        @endif
+      </td>
+    </tr>
+
+  </tbody>
+</table>
             </div>
             <div class="">
               <a class="btn btn-primary" href="{{route('apartments.index')}}">Torna agli appartamenti</a>

@@ -117,7 +117,7 @@
 
         <label for="exampleInputEmail1">Indirizzo Email:</label>
         @if (Auth::check())
-          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{Auth::user()->email}}">
+          <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$utente->email}}">
         @else
           <input type="email" name="email_req" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
         @endif

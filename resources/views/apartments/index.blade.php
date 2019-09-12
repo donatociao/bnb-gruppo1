@@ -10,8 +10,7 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Mq</th>
-                    <th scope="col">Rooms</th>
+
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -20,8 +19,6 @@
                   <tr>
                     <th scope="row">{{$apartment->id}}</th>
                     <td>{{$apartment->title}}</td>
-                    <td>{{$apartment->mq}}</td>
-                    <td>{{$apartment->rooms_number}}</td>
                     <td>
                       <a class="btn btn-success" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
                       <a class="btn btn-warning" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>

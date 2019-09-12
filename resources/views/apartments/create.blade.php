@@ -59,14 +59,14 @@
       </div>
       <div class="form-group">
         <label for="civic_number">Numero civico:</label>
-        <input type="text" class="form-control modCoordinate" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number') }}">
+        <input id="calculate" type="text" class="form-control modCoordinate" name="civic_number" placeholder="Inserisci il numero civico" value="{{ old('civic_number') }}">
       </div>
 
-      <div class="alert alert-dark invio" role="alert">
+      <div class=" alert alert-dark invio" role="alert">
         Calcola le coordinate:
       </div>
 
-      <div class="form-group">
+      <div class=" form-group">
         <label for="sea_view">Coordinate:</label>
         <input class="lat_input" type="text"  name="latitude" value="" {{ old('latitude') }}>Latitudine
         <input class="lon_input" type="text"  name="longitude" value="" {{ old('longitude') }}>Longitudine
@@ -106,5 +106,6 @@
       <button id="createApartment" type="submit" class="btn btn-primary">Inserisci</button>
     </form>
   </div>
+  <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
 
 @endsection
