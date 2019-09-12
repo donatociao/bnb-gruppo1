@@ -10861,7 +10861,7 @@ body {
 }
 
 .row-search {
-  margin-left: 294px;
+  margin-left: 200px;
   margin-top: 343px;
 }
 
@@ -10869,10 +10869,8 @@ body {
   border-radius: 10px;
   border: 3px solid #2d3436;
   margin-top: 20px;
-  width: 100%;
   height: 60px;
   margin-bottom: 20px;
-  margin-left: 40px;
 }
 
 .btn.btn-dark {
@@ -10884,7 +10882,7 @@ body {
   font-size: 20px;
   border: 3px solid #fff;
   border-radius: 10px;
-  margin: 20px 50px;
+  margin-bottom: 30px;
 }
 
 .btn.btn-dark:hover {
@@ -10899,7 +10897,7 @@ body {
 .header-container {
   text-align: center;
   font-size: 43px;
-  height: 1200px;
+  height: auto;
   width: 100%;
   background-color: #2d3436;
   padding-top: 10px;
@@ -10912,44 +10910,46 @@ body {
 }
 
 .header-container .card-title {
-  font-size: 20px;
-  width: 230px;
+  font-size: 17px;
 }
 
 .header-container .card-title:hover {
   color: #fff;
 }
 
-.container {
-  width: 100%;
+.col-lg-3 .col-md-4 .col-sm-12 {
+  margin: 20px;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.mr-2 {
+  margin-right: -0.7rem !important;
 }
 
 .container-card {
-  width: 350px;
-  float: right;
+  width: 100%;
+  float: left;
 }
 
 .dim-img {
   width: 230px;
   height: 140px;
   margin-top: 18px;
+  margin-bottom: 40px;
+}
+
+.card {
+  width: 400px;
 }
 
 .card-body {
   height: 300px;
-  width: 300px;
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .dim-img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .container-apartment {
   max-width: 100%;
-  height: 800px;
+  height: auto;
   background-color: #2d3436;
   color: #fff;
 }
@@ -10959,14 +10959,13 @@ body {
   color: #1abc9c;
   margin-top: 40px;
   font-size: 30px;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.img-apartment-flex {
-  width: 54%;
-  margin-top: 40px;
+.img-apartment {
+  margin: 40px auto;
   float: left;
-  margin-bottom: 40px;
-  margin-left: 70px;
 }
 
 .container-description {
@@ -10974,6 +10973,7 @@ body {
   margin-left: 48px;
   margin-top: 28px;
   max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .description {
@@ -10983,7 +10983,7 @@ body {
 }
 
 .btn-h.btn-dark {
-  width: 330px;
+  width: 100%;
   height: 60px;
   background-color: #2d3436;
   color: #1abc9c;
@@ -11000,14 +11000,13 @@ body {
 }
 
 .btn-container {
-  margin-top: 70px;
-  margin-left: 270px;
+  margin-top: 80px;
 }
 
 .footer-container {
   max-width: 100%;
-  height: 300px;
-  margin-top: 40px;
+  height: auto;
+  margin: 40px 0;
   position: inherit;
   text-align: center;
   font-size: 18px;
@@ -11049,10 +11048,13 @@ a:hover {
   float: right;
 }
 
-.privacy,
+.privacy {
+  text-align: center;
+  font-size: 43px;
+}
+
 .privacy-con {
   font-size: 43px;
-  text-align: center;
 }
 
 .copyright {
@@ -11061,35 +11063,35 @@ a:hover {
 }
 
 .container-email {
-  width: 100%;
-  height: 750px;
+  max-width: 100%;
+  max-height: auto;
   background-color: #b2bec3;
   padding: 50px;
 }
 
 .container-form {
-  width: 600px;
-  height: 800px;
-  float: right;
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+  margin: auto;
 }
 
 h2 {
+  margin: auto;
+  margin-top: 60px;
   color: #2d3436;
   font-size: 30px;
   font-weight: bold;
-  width: 550px;
   text-align: center;
-  margin-left: 45px;
 }
 
 label {
   margin-top: 35px;
   text-align: center;
-  margin-left: 30px;
 }
 
 .btn-h-e.btn-dark {
-  width: 330px;
+  width: 100%;
   height: 60px;
   background-color: #2d3436;
   color: #1abc9c;
@@ -11097,7 +11099,6 @@ label {
   font-size: 20px;
   border: 3px solid #fff;
   border-radius: 10px;
-  margin: 20px 160px;
 }
 
 .btn-h-e.btn-dark:hover {
@@ -11106,12 +11107,13 @@ label {
 }
 
 .container-maps {
-  width: 600px;
+  width: 100%;
+  height: auto;
   float: left;
 }
 
 .map {
-  width: 700px;
+  width: 100%;
   height: 540px;
   background-color: #fff;
   border-radius: 10px;

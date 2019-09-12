@@ -1,20 +1,29 @@
 @extends('layouts.app_public')
 
 @section('content')
-<div class="container-apartment">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+
+    </div>
+  </div>
+</div>
+
+<div class="container container-apartment">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card_container">
               <div class="title-apartment">
                 {{$appartamento->title}}
               </div>
-              <div class="img-apartment-flex">
+              <div class="img img-apartment col-lg-6 col-md-12 col-sm-12">
                 <img src="{{ asset('storage/'. $appartamento->url_img) }}">
-                <div class="btn-container">
+                <div class="btn btn-container">
                   <a class="btn-h btn-dark" href="{{route('homepage')}}">Torna alla homepage</a>
                 </div>
               </div>
-              <div class="container-description">
+              <div class="container container-description col-lg-16 col-md-12 col-sm-12">
                 <div class="description">
                   Numero stanze: {{$appartamento->rooms_number}}
                 </div>
@@ -95,14 +104,12 @@
         </div>
     </div>
 </div>
-<div class="container-email">
-  <div class="container-maps">
+<div class="container container-email">
     <h2>Mappa:</h2>
     <div class="map">
 
     </div>
-  </div>
-  <div class="container-form">
+  <div class="container container-form">
   @if (Auth::check() && Auth::user()->email === $utente->email)
     <p>Sei il proprietario dell'appartamento.</p>
   @else
@@ -129,6 +136,7 @@
       <button type="submit" class="btn-h-e btn-dark">Invia</button>
     </form>
   @endif
+</div>
 </div>
 </div>
 @endsection

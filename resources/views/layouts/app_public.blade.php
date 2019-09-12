@@ -42,8 +42,8 @@
       @yield('content')
       <!--FOOTER-->
       <div class="footer-container">
-        <div class="col-md-12">
-          <p class="privacy-con">Condizioni e privacy:</p>
+        <div class="col col-lg-12 col-md-12 col-sm-12">
+          <p class="privacy privacy-con">Condizioni e privacy:</p>
           <hr class="clearfix w-100 d-md-none pb-3">
           <div class="list">
             <ul class="list-unstyled">

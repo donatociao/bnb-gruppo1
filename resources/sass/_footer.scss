@@ -1,7 +1,7 @@
 .footer-container{
   max-width: 100%;
-  height: 300px;
-  margin-top: 40px;
+  height: auto;
+  margin: 40px 0;
   position:inherit;
   text-align: center;
   font-size: 18px;
@@ -43,9 +43,13 @@ a:hover{
   float: right;
 }
 
-.privacy, .privacy-con{
-  font-size: 43px;
+.privacy{
   text-align: center;
+  font-size: 43px;
+}
+
+.privacy-con{
+  font-size: 43px;
 }
 
 .copyright{

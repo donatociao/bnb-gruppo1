@@ -34,15 +34,12 @@
       <div class="title">
         <p>BoolBnB<p>
           <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+            <div class="col-sm-12 col-md-10 col-lg-8">
               <div class="card-body-b row no-gutters align-items-center">
-                <div class="col-auto">
-                    <i class="fas fa-search h4 text-body"></i>
-                </div>
                 <form class="" action="{{route('search')}}" method="get">
                   @csrf
-                  <div class="col">
-                      <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless" type="search" placeholder="Inserisci la città...">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                      <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless col-s-12 col-md-12" type="search" placeholder="Inserisci la città...">
                   </div>
                   <input style="display: none" id="lat_search" type="text" name="lat_search" class="form-control" value="" placeholder="">
                   <input style="display: none" id="lon_search" type="text" name="lon_search" class="form-control" value="" placeholder="">
@@ -56,31 +53,34 @@
         </div>
       </div>
   <!--HEADER-->
+  {{-- <div class="container">
+    <div class="row">
+      <div class="col">
+
+      </div>
+    </div>
+  </div> --}}
+
+
+
       <div class="header-container">
         <div class="container">
-          <div class="row-header">
-            <div class="col-md-12">
+          <div class="row">
               <p>I nostri appartamenti in evidenza:</p>
-              <!--appartamenti in evidenza primi 4 (da vedere) : MORBIDO!-->
               @foreach ($appartamenti as $appartamento)
-                <div class="container-card col-md-3 col-xs-4">
-                  <div class="card-body">
-                    <a class="card-title" href="{{route('public.show', $appartamento->id)}}">{{ $appartamento->title }}</a>
-                    <img class="dim-img" alt="Responsive image" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                  <div class="row">
+                    <div class="col-12">
+                      <a class="card-title" href="{{route('public.show', $appartamento->id)}}">{{ $appartamento->title }}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <img class="dim-img" alt="Responsive image" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
+                    </div>
                   </div>
                 </div>
               @endforeach
-            </div>
-            <!--<div class="col-md-12">
-              @foreach ($appartamenti as $appartamento)
-                <div class="container-card col-md-3">
-                  <div class="card-body">
-                    <p class="card-title">{{ $appartamento->title }}</p>
-                    <img class="dim-img col-md-12" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
-                  </div>
-                </div>
-              @endforeach
-            </div>-->
           </div>
         </div>
       </div>
