@@ -56,6 +56,7 @@ class EmailController extends Controller
 
     $dati_appartamento = Apartment::where('id', $dati_messaggio->apartment_id)->first();
     $data = [
+      'messaggio' => $dati_messaggio,
       'appartamento' => $dati_appartamento,
     ];
     return view('mails.show', $data);

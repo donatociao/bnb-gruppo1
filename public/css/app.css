@@ -10970,7 +10970,7 @@ body {
 
 .container-description {
   float: left;
-  margin-left: 55px;
+  margin-left: 48px;
   margin-top: 28px;
   max-width: 500px;
   margin-bottom: 20px;
@@ -11054,7 +11054,7 @@ a:hover {
 }
 
 .privacy-con {
-  font-size: 37px;
+  font-size: 43px;
 }
 
 .copyright {
@@ -11069,13 +11069,9 @@ a:hover {
   padding: 50px;
 }
 
-.map {
-  margin-left: 10px;
-}
-
 .container-form {
-  max-width: 100%;
-  max-height: auto;
+  width: 100%;
+  height: auto;
   margin-top: 80px;
   margin: auto;
 }
@@ -11095,7 +11091,7 @@ label {
 }
 
 .btn-h-e.btn-dark {
-  width: 110px;
+  width: 100%;
   height: 60px;
   background-color: #2d3436;
   color: #1abc9c;
@@ -11117,15 +11113,18 @@ label {
 }
 
 .map {
-  width: 700px;
-  height: 520px;
+  width: 100%;
+  height: 540px;
   background-color: #fff;
   border-radius: 10px;
   border: 3px solid #2d3436;
-  display: inline-block;
 }
 
 h2 {
   margin-bottom: 40px;
+}
+
+.container_filter {
+  max-width: 1260px;
 }
 
