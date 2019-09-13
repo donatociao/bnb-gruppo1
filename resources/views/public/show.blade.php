@@ -111,7 +111,7 @@
     </div>
   <div class="container container-form">
   @if (Auth::check() && Auth::user()->email === $utente->email)
-    <p>Sei il proprietario dell'appartamento.</p>
+    <p class="proprietario"> Sei il proprietario dell'appartamento! </p>
   @else
     <h2>Sei interessato all'appartamento? Contatta {{$utente->name}}!</h2>
 

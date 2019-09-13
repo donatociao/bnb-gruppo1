@@ -5,17 +5,27 @@
   padding: 50px;
 }
 
+.map{
+  margin-left: 10px;
+}
+
 .container-form{
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: auto;
   margin-top: 80px;
   margin: auto;
+}
+
+.proprietario{
+  margin-top: 55px;
+  font-size: 30px;
+  color:  #525f7f;
+  font-weight: bold;
 }
 
 h2{
   margin: auto;
   margin-top: 60px;
-
   color: #2d3436;
   font-size: 30px;
   font-weight: bold;
@@ -28,7 +38,7 @@ label{
 }
 
 .btn-h-e.btn-dark{
-  width: 100%;
+  width: 110px;
   height: 60px;
   background-color: #2d3436;
   color: #1abc9c;

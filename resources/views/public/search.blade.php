@@ -3,51 +3,49 @@
 @section('content')
 
     {{-- FILTRI --}}
-    <div class="form-group">
+    <div class="form-group col-lg-12 col-md-12 col-sm-12">
       <label for="km">Entro km:</label>
       <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci numero minimo di stanze" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="rooms_number">Numero minimo di stanze:</label>
       <input type="number" id="stanze" class="form-control" name="rooms_number" placeholder="Inserisci numero minimo di stanze" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="host_number">Numero minimo di letti:</label>
       <input type="number" id="letti" class="form-control" name="host_number" placeholder="Inserisci numero minimo di letti" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="wc_number">Numero minimo di bagni:</label>
       <input type="number" id="wc" class="form-control" name="wc_number" placeholder="Inserisci numero minimo di bagni" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="mq">Numero minimo di metri quadri:</label>
       <input type="number" id="mq" class="form-control" name="mq" placeholder="Inserisci numero minimo di metri quadri" value="">
-    </div>
 
-    <div class="form-group">
+
+
       <label for="wifi">Wi-fi:</label>
       <input id="wifi" type="checkbox"  name="wifi" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="parking">Parcheggio:</label>
       <input id="parking" type="checkbox"  name="parking" value="">
-    </div>
-    <div class="form-group">
+
+
       <label for="pool">Piscina:</label>
       <input id="pool" type="checkbox"  name="pool" value="">
-    </div>
-    <div class="form-group">
+
       <label for="reception">Portineria:</label>
       <input id="reception" type="checkbox"  name="reception" value="">
-    </div>
-    <div class="form-group">
+
       <label for="spa">Sauna:</label>
       <input id="spa" type="checkbox"  name="spa" value="">
-    </div>
-    <div class="form-group">
+
       <label for="sea_view">Vista mare:</label>
       <input id="sea_view" type="checkbox"  name="sea_view" value="">
     </div>
+    
     <div style="display: none" class="form-group">
       <input  id="latitudine" type="text"  name="latitude" value="{{$latitudine}}">
       <input id="longitudine" type="text"  name="latitude" value="{{$longitudine}}">

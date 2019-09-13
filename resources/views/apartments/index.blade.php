@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" style="position: relative; top: 120px;">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card_container">
               <table class="table table-striped mt-7">
                 <thead>
@@ -20,8 +20,8 @@
                     <th scope="row">{{$apartment->id}}</th>
                     <td>{{$apartment->title}}</td>
                     <td>
-                      <a class="btn btn-success" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
-                      <a class="btn btn-warning" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>
+                      <a class="btn btn-dark" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
+                      <a class="btn btn-secondary" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>
                       <form id="delete" action="{{ route('apartments.destroy', $apartment->id) }}" method="post">
                         @method('DELETE')
                         @csrf
