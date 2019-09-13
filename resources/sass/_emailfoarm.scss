@@ -19,7 +19,7 @@
 .proprietario{
   margin-top: 55px;
   font-size: 30px;
-  color:  #525f7f;
+  color:  #000;
   font-weight: bold;
 }
 
@@ -51,4 +51,12 @@ label{
 .btn-h-e.btn-dark:hover{
   color: #fff;
   border-radius: 10px;
+}
+
+.container-form2{
+  max-width: 100%;
+  max-height: auto;
+  margin-top: 80px;
+  margin: auto;
+  background-color: #2d3436;
 }

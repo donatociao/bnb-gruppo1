@@ -10910,11 +10910,9 @@ body {
 }
 
 .header-container .card-title {
-  font-size: 17px;
-}
-
-.header-container .card-title:hover {
+  font-size: 18px;
   color: #fff;
+  font-weight: bold;
 }
 
 .col-lg-3 .col-md-4 .col-sm-12 {
@@ -11003,6 +11001,83 @@ body {
   margin-top: 80px;
 }
 
+.visual3 {
+  max-width: 150px;
+  height: 45px;
+  border: 2px solid #fff;
+  background-color: #2d3436;
+  color: #1abc9c;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.info {
+  color: #1abc9c;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 0;
+}
+
+.container-form-app {
+  max-width: 100%;
+  background-color: #b2bec3;
+  height: auto;
+}
+
+.card-app {
+  margin: 50px 4px;
+  background-color: #2d3436;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.card-app2 {
+  background-color: #2d3436;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.visual {
+  height: 100px;
+}
+
+.card-img-top {
+  margin-top: 15px;
+}
+
+.list-group-flush .list-group-item {
+  background-color: #2d3436;
+  color: #fff;
+}
+
+.visual2 {
+  max-width: 150px;
+  height: 45px;
+  border: 2px solid #fff;
+  background-color: #2d3436;
+  color: #1abc9c;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 28px 46px;
+}
+
+#sea_view {
+  margin-bottom: 50px;
+}
+
+.card-title2 {
+  font-size: 18px;
+  color: #1abc9c;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 10px;
+}
+
 .footer-container {
   max-width: 100%;
   height: auto;
@@ -11083,7 +11158,7 @@ a:hover {
 .proprietario {
   margin-top: 55px;
   font-size: 30px;
-  color: #525f7f;
+  color: #000;
   font-weight: bold;
 }
 
@@ -11115,6 +11190,14 @@ label {
 .btn-h-e.btn-dark:hover {
   color: #fff;
   border-radius: 10px;
+}
+
+.container-form2 {
+  max-width: 100%;
+  max-height: auto;
+  margin-top: 80px;
+  margin: auto;
+  background-color: #2d3436;
 }
 
 .container-maps {

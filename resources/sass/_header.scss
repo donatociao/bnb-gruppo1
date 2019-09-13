@@ -12,13 +12,15 @@
     margin-bottom: 40px;
     color: #fff;
   }
+
   .card-title{
-    font-size: 17px;
-  }
-  .card-title:hover{
+    font-size: 18px;
     color: #fff;
+    font-weight: bold;
   }
+
 }
+
 .col-lg-3 .col-md-4 .col-sm-12{
   margin: 20px;
   padding-right: 0 !important;
@@ -106,4 +108,83 @@
   margin-top: 80px;
 }
 
+
+.visual3{
+  max-width: 150px;
+  height: 45px;
+  border: 2px solid #fff;
+  background-color: #2d3436;
+  color: #1abc9c;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
 //search.blade.php
+.info{
+  color: #1abc9c;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-group{
+  margin: 0;
+}
+
+.container-form-app{
+  max-width: 100%;
+  background-color: #b2bec3;
+  height: auto;
+}
+
+.card-app{
+  margin: 50px 4px;
+  background-color: #2d3436;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.card-app2{
+  background-color: #2d3436;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.visual{
+  height: 100px;
+}
+
+.card-img-top{
+  margin-top: 15px;
+}
+
+.list-group-flush .list-group-item {
+  background-color: #2d3436;
+  color: #fff;
+}
+
+.visual2{
+  max-width: 150px;
+  height: 45px;
+  border: 2px solid #fff;
+  background-color: #2d3436;
+  color: #1abc9c;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 28px 46px;
+}
+
+#sea_view{
+  margin-bottom: 50px;
+}
+
+.card-title2{
+  font-size: 18px;
+  color: #1abc9c;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 10px;
+}

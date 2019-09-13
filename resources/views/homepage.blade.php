@@ -65,7 +65,7 @@
                     </div>
                     <form class="" action="{{route('public.show')}}" method="get">
                       <input style="display: none" type="text" name="address_id" value={{$appartamento->address_id}}>
-                      <input class="card-title" type="submit" name="" value="Visualizza">
+                      <input class="visual3" type="submit" name="" value="Visualizza">
                     </form>
                   </div>
                   <div class="row">
