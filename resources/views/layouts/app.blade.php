@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        {{-- Meta mappa --}}
+        <meta name="viewport" content="initial-scale=9.0, width=device-width" />
+
         <title>{{ config('app.name', 'Argon Dashboard') }}</title>
         <!-- Favicon -->
         <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
@@ -15,6 +18,11 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+
+        {{-- Script mappa --}}
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -41,7 +49,7 @@
         @stack('js')
 
         <!-- Argon JS -->
-        
+
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
 
 

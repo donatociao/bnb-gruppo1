@@ -106,7 +106,7 @@
 </div>
 <div class="container container-email col-lg-12 col-md-12 col-sm-12">
     <h2>Mappa:</h2>
-    <div class="map">
+    <div class="map" id="mapContainer">
 
     </div>
   <div class="container container-form">
