@@ -49003,6 +49003,8 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49221,31 +49223,39 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento); // Funzione che genera le cards e le inserisce nell'html
 
 function genera_card(informazioni) {
-  $(".container").empty();
+  $(".container-handlebars").empty();
 
-  for (var i = 0; i < informazioni.result.length; i++) {
-    if (informazioni.result[i]["public"]) {
-      var context = {
-        'address_id': informazioni.result[i].address_id,
-        'img_url': informazioni.result[i].url_img,
-        "titolo": informazioni.result[i].title,
-        "citta": informazioni.result[i].city,
-        "numero_civico": informazioni.result[i].civic_number,
-        "numero_stanze": informazioni.result[i].rooms_number,
-        "numero_letti": informazioni.result[i].host_number,
-        "numero_bagni": informazioni.result[i].wc_number,
-        "metri_quadri": informazioni.result[i].mq,
-        "wifi": informazioni.result[i].wifi,
-        "parcheggio": informazioni.result[i].parking,
-        "piscina": informazioni.result[i].pool,
-        "portineria": informazioni.result[i].reception,
-        "sauna": informazioni.result[i].spa,
-        "vista_mare": informazioni.result[i].sea_view,
-        "distanza": informazioni.result[i].distance
-      };
-      var html = template(context);
-      $(".container").append(html);
+  if (informazioni.result.length > 0) {
+    for (var i = 0; i < informazioni.result.length; i++) {
+      if (informazioni.result[i]["public"]) {
+        var context = _defineProperty({
+          'address_id': informazioni.result[i].address_id,
+          'img_url': informazioni.result[i].url_img,
+          "titolo": informazioni.result[i].title,
+          "citta": informazioni.result[i].city,
+          "via": informazioni.result[i].street,
+          "cap": informazioni.result[i].cap,
+          "distanza": informazioni.result[i].distance,
+          "provincia": informazioni.result[i].prov,
+          "numero_civico": informazioni.result[i].civic_number,
+          "numero_stanze": informazioni.result[i].rooms_number,
+          "numero_letti": informazioni.result[i].host_number,
+          "numero_bagni": informazioni.result[i].wc_number,
+          "metri_quadri": informazioni.result[i].mq,
+          "wifi": informazioni.result[i].wifi,
+          "parcheggio": informazioni.result[i].parking,
+          "piscina": informazioni.result[i].pool,
+          "portineria": informazioni.result[i].reception,
+          "sauna": informazioni.result[i].spa,
+          "vista_mare": informazioni.result[i].sea_view
+        }, "distanza", informazioni.result[i].distance);
+
+        var html = template(context);
+        $(".container-handlebars").append(html);
+      }
     }
+  } else {
+    $(".container-handlebars").append('NESSUN APPARTAMENTO TROVATO');
   }
 } ////////////////////////////////////////////////////////////////////////////////
 //mappa
@@ -49359,8 +49369,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

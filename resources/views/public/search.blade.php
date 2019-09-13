@@ -46,7 +46,7 @@
     </div>
 
     {{-- CONTAINER INIZIALE CHE POI VIENE SOSTITUITO CON LE CARD DI HANDLEBARS SE SI ATTIVA QUALCHE FILTRO --}}
-    <div class="container container-form-app d-flex justify-content-around">
+    <div class="container container-form-app d-flex justify-content-around container-handlebars">
       @foreach ($appartamenti as $appartamento)
           @if ($appartamento->public)
           <div class="card card-app col-lg-3 col-md-4 col-sm-12">
@@ -54,7 +54,6 @@
             <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="card-img-top">
             <div class="card-body h-25">
               <p class="card-title">{{$appartamento->street}} {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
-              <p class="card-title">Latitudine: {{$appartamento->latitude}}, Longitudine: {{$appartamento->longitude}}</p>
               <p class="card-title">Distanza: {{$appartamento->distance}}</p>
             </div>
             <ul class="list-group list-group-flush lista">
@@ -76,22 +75,20 @@
     {{-- SCRIPT DI HANDLEBARS --}}
     <script id="card" type="text/x-handlebars-template">
       <div class="card card-app2 col-lg-3 col-md-4 col-sm-12" style="width: 18rem;">
-        <script id="card" type="text/x-handlebars-template">
-          <h5 class="card-title2">{{$appartamento->title}}</h5>
+          <h5 class="card-title2">@{{titolo}}</h5>
         <img src="http://localhost:8000/storage/@{{img_url}}" class="card-img-top">
         <div class="card-body h-25">
-          <p class="card-title">{{$appartamento->street}} {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
-          <p class="card-title">Latitudine: {{$appartamento->latitude}}, Longitudine: {{$appartamento->longitude}}</p>
-          <p class="card-title">Distanza: {{$appartamento->distance}}</p>
+          <p class="card-title">@{{via}} @{{numero_civico}}, @{{citta}}, @{{cap}}, @{{provincia}}</p>
+          <p class="card-title">Distanza: @{{distanza}}</p>
         </div>
         <ul class="list-group list-group-flush lista">
-          <li class="list-group-item">N° stanze: {{$appartamento->rooms_number}}
-          <li class="list-group-item">N° letti: {{$appartamento->host_number}}
-          <li class="list-group-item">N° bagni: {{$appartamento->wc_number}}
-          <li class="list-group-item">Mq: {{$appartamento->mq}}
+          <li class="list-group-item">N° stanze: @{{numero_stanze}}
+          <li class="list-group-item">N° letti: @{{numero_letti}}
+          <li class="list-group-item">N° bagni: @{{numero_bagni}}
+          <li class="list-group-item">Mq: @{{metri_quadri}}
         </ul>
         <form class="visual" action="{{route('public.show')}}" method="get">
-          <input style="display: none" id="id_appartamento" type="text" name="address_id" value={{$appartamento->address_id}}>
+          <input style="display: none" id="id_appartamento" type="text" name="address_id" value="@{{address_id}}">
           <input class="visual2 col-lg-12 col-md-12 col-sm-12" type="submit" name="" value="Visualizza">
         </form>
       </div>

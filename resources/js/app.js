@@ -247,30 +247,38 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento);
 // Funzione che genera le cards e le inserisce nell'html
 function genera_card(informazioni) {
-  $(".container").empty();
-  for (var i = 0; i < informazioni.result.length; i++) {
-    if (informazioni.result[i].public) {
-      var context = {
-        'address_id': informazioni.result[i].address_id,
-        'img_url': informazioni.result[i].url_img,
-        "titolo": informazioni.result[i].title,
-        "citta": informazioni.result[i].city,
-        "numero_civico": informazioni.result[i].civic_number,
-        "numero_stanze": informazioni.result[i].rooms_number,
-        "numero_letti": informazioni.result[i].host_number,
-        "numero_bagni": informazioni.result[i].wc_number,
-        "metri_quadri": informazioni.result[i].mq,
-        "wifi": informazioni.result[i].wifi,
-        "parcheggio": informazioni.result[i].parking,
-        "piscina": informazioni.result[i].pool,
-        "portineria": informazioni.result[i].reception,
-        "sauna": informazioni.result[i].spa,
-        "vista_mare": informazioni.result[i].sea_view,
-        "distanza": informazioni.result[i].distance
+  $(".container-handlebars").empty();
+  if (informazioni.result.length > 0) {
+    for (var i = 0; i < informazioni.result.length; i++) {
+      if (informazioni.result[i].public) {
+        var context = {
+          'address_id': informazioni.result[i].address_id,
+          'img_url': informazioni.result[i].url_img,
+          "titolo": informazioni.result[i].title,
+          "citta": informazioni.result[i].city,
+          "via": informazioni.result[i].street,
+          "cap": informazioni.result[i].cap,
+          "distanza": informazioni.result[i].distance,
+          "provincia": informazioni.result[i].prov,
+          "numero_civico": informazioni.result[i].civic_number,
+          "numero_stanze": informazioni.result[i].rooms_number,
+          "numero_letti": informazioni.result[i].host_number,
+          "numero_bagni": informazioni.result[i].wc_number,
+          "metri_quadri": informazioni.result[i].mq,
+          "wifi": informazioni.result[i].wifi,
+          "parcheggio": informazioni.result[i].parking,
+          "piscina": informazioni.result[i].pool,
+          "portineria": informazioni.result[i].reception,
+          "sauna": informazioni.result[i].spa,
+          "vista_mare": informazioni.result[i].sea_view,
+          "distanza": informazioni.result[i].distance
+        }
+        var html = template(context);
+        $(".container-handlebars").append(html);
       }
-      var html = template(context);
-      $(".container").append(html);
     }
+  }else {
+    $(".container-handlebars").append('NESSUN APPARTAMENTO TROVATO');
   }
 }
 

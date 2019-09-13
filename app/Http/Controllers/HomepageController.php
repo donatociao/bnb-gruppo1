@@ -25,6 +25,12 @@ class HomepageController extends Controller
     }
     $dati_appartamento = Apartment::where('address_id', $dati_indirizzo->id)->first();
 
+    // Contatore visualizzazioni
+    $dati_appartamento->counter = $dati_appartamento->counter + 1;
+    $dati_appartamento->update();
+    //////////////////////////////////////////////////////////////
+
+
     $dati_servizi = Service::where('id', $dati_appartamento->service_id)->first();
     $dati_utente = User::where('id', $dati_appartamento->user_id)->first();
     $dati_localizzazione = Geolocal::where('id', $dati_indirizzo->geolocal_id)->first();
