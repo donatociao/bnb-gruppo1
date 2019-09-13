@@ -38,7 +38,6 @@ $(document).ready(function(){
 
  $('#calculate').change(function(){
 
-
    var dati = $("#form_geo").serializeArray(); //recupera tutti i valori del form automaticamente
    console.log(dati);
    $.ajax({

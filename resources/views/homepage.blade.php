@@ -58,22 +58,24 @@
           <div class="row">
               <p>I nostri appartamenti in evidenza:</p>
               @foreach ($appartamenti as $appartamento)
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                  <div class="row">
-                    <div class="col-12">
-                      <h3 class="card-title">{{ $appartamento->title }}</h3>
+                @if ($appartamento->public)
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="row">
+                      <div class="col-12">
+                        <h3 class="card-title">{{ $appartamento->title }}</h3>
+                      </div>
+                      <form class="" action="{{route('public.show')}}" method="get">
+                        <input style="display: none" type="text" name="address_id" value={{$appartamento->address_id}}>
+                        <input class="visual3" type="submit" name="" value="Visualizza">
+                      </form>
                     </div>
-                    <form class="" action="{{route('public.show')}}" method="get">
-                      <input style="display: none" type="text" name="address_id" value={{$appartamento->address_id}}>
-                      <input class="visual3" type="submit" name="" value="Visualizza">
-                    </form>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <img class="dim-img" alt="Responsive image" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
+                    <div class="row">
+                      <div class="col-12">
+                        <img class="dim-img" alt="Responsive image" src="{{ asset('storage/'. $appartamento->url_img) }}" alt=" " class="rounded">
+                      </div>
                     </div>
                   </div>
-                </div>
+                @endif
               @endforeach
           </div>
         </div>
