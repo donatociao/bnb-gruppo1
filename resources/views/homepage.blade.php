@@ -61,8 +61,12 @@
                 <div class="col-lg-3 col-md-4 col-sm-12">
                   <div class="row">
                     <div class="col-12">
-                      <a class="card-title" href="{{route('public.show', $appartamento->id)}}">{{ $appartamento->title }}</a>
+                      <h3 class="card-title">{{ $appartamento->title }}</h3>
                     </div>
+                    <form class="" action="{{route('public.show')}}" method="get">
+                      <input style="display: none" type="text" name="address_id" value={{$appartamento->address_id}}>
+                      <input class="card-title" type="submit" name="" value="Visualizza">
+                    </form>
                   </div>
                   <div class="row">
                     <div class="col-12">

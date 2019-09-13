@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', 'HomepageController@index')->name('homepage');
-Route::get('show/{id}','HomepageController@show')->name('public.show');
+Route::get('/visualizza','HomepageController@show')->name('public.show');
 Route::get('/search', 'SearchController@index')->name('public.search'); // Rotta pagina di ricerca
 
 

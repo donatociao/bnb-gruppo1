@@ -47,7 +47,6 @@ class SearchController extends Controller
                                            ->where('distance', '<=', 20000)
                                            ->orderBy('distance', 'asc')
                                            ->get();
-
     $data = [
       'appartamenti' => $nel_raggio,
       'latitudine' => $Request->lat_search,

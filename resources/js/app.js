@@ -251,7 +251,7 @@ function genera_card(informazioni) {
   for (var i = 0; i < informazioni.result.length; i++) {
     if (informazioni.result[i].public) {
       var context = {
-        'id': informazioni.result[i].id,
+        'address_id': informazioni.result[i].address_id,
         'img_url': informazioni.result[i].url_img,
         "titolo": informazioni.result[i].title,
         "citta": informazioni.result[i].city,

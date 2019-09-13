@@ -45,7 +45,7 @@
       <label for="sea_view">Vista mare:</label>
       <input id="sea_view" type="checkbox"  name="sea_view" value="">
     </div>
-    
+
     <div style="display: none" class="form-group">
       <input  id="latitudine" type="text"  name="latitude" value="{{$latitudine}}">
       <input id="longitudine" type="text"  name="latitude" value="{{$longitudine}}">
@@ -71,15 +71,14 @@
               <li class="list-group-item">Numero ospiti: @{{numero_letti}}</li>
               <li class="list-group-item">Numero bagni: @{{numero_bagni}}</li>
             </ul>
-            <div class="card-body">
-              <a href="{{route('public.show',$appartamento->id)}}" class="card-link"> Collega a show @{{id}}</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
+            <form class="" action="{{route('public.show')}}" method="get">
+              <input style="display: none" id="id_appartameto" type="text" name="address_id" value={{$appartamento->address_id}}>
+              <input type="submit" name="" value="Visualizza">
+            </form>
           </div>
           @endif
         @endforeach
     </div>
-
 
     {{-- SCRIPT DI HANDLEBARS --}}
     <script id="card" type="text/x-handlebars-template">
@@ -94,10 +93,10 @@
           <li class="list-group-item">Numero ospiti: @{{numero_letti}}</li>
           <li class="list-group-item">Numero bagni: @{{numero_bagni}}</li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Collega a show @{{id}}</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+        <form class="" action="{{route('public.show')}}" method="get">
+          <input style="display: none" id="id_appartameto" type="text" name="address_id" value="@{{address_id}}">
+          <input type="submit" name="" value="Visualizza">
+        </form>
       </div>
     </script>
 @endsection
