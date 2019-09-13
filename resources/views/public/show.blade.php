@@ -107,6 +107,30 @@
 <div class="container container-email col-lg-12 col-md-12 col-sm-12">
     <h2>Mappa:</h2>
     <div class="map" id="mapContainer">
+      <script>
+        // inizializzo:
+        var platform = new H.service.Platform({
+          'apikey': 'nTD1tckbHBV6EQuuwpL2THYIWMP-AYuoN9cJJPep0TA'
+        });
+
+        // definisco tipo mappa
+        var maptypes = platform.createDefaultLayers();
+
+        // visualizzo mappa:
+        var map = new H.Map(
+          document.getElementById('mapContainer'),
+          maptypes.vector.normal.map,
+          {
+            zoom: 15,
+            center: { lng: {{$localizzazione->longitude}}, lat: {{$localizzazione->latitude}} }
+          });
+
+          // creo marker
+        var marker = new H.map.Marker({ lat: {{$localizzazione->latitude}}, lng: {{$localizzazione->longitude}} });
+
+          // aggiungo marker alla mappa:
+        map.addObject(marker);
+      </script>
 
     </div>
   <div class="container container-form">
@@ -140,3 +164,28 @@
 </div>
 </div>
 @endsection
+
+<script>
+  // inizializzo:
+  var platform = new H.service.Platform({
+    'apikey': 'nTD1tckbHBV6EQuuwpL2THYIWMP-AYuoN9cJJPep0TA'
+  });
+
+  // definisco tipo mappa
+  var maptypes = platform.createDefaultLayers();
+
+  // visualizzo mappa:
+  var map = new H.Map(
+    document.getElementById('mapContainer'),
+    maptypes.vector.normal.map,
+    {
+      zoom: 10,
+      center: { lng: {{$localizzazione->longitude}}, lat: {{$localizzazione->latitude}} }
+    });
+
+    // creo marker
+  var marker = new H.map.Marker({ lat: {{$localizzazione->latitude}}, lng: {{$localizzazione->longitude}} });
+
+    // aggiungo marker alla mappa:
+  map.addObject(marker);
+</script>

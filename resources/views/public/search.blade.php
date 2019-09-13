@@ -4,8 +4,8 @@
 
     {{-- FILTRI --}}
     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-      <label for="km">Entro km:</label>
-      <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci numero minimo di stanze" value="">
+      <label for="km">Km:</label>
+      <input type="number" id="km" class="form-control" name="km" placeholder="In che raggio di km stai cercando?" value="">
 
 
       <label for="rooms_number">Numero minimo di stanze:</label>
@@ -46,7 +46,7 @@
       <input id="sea_view" type="checkbox"  name="sea_view" value="">
     </div>
 
-    <div style="display: none" class="form-group">
+    <div class="d-none form-group">
       <input  id="latitudine" type="text"  name="latitude" value="{{$latitudine}}">
       <input id="longitudine" type="text"  name="latitude" value="{{$longitudine}}">
     </div>
@@ -67,7 +67,7 @@
               <p class="card-title">{{$appartamento->city}}, {{$appartamento->distance}}</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Numero stanze: @{{numero_stanze}}</li>
+              <li class="list-group-item"> Numero stanze: @{{numero_stanze}}</li>
               <li class="list-group-item">Numero ospiti: @{{numero_letti}}</li>
               <li class="list-group-item">Numero bagni: @{{numero_bagni}}</li>
             </ul>
