@@ -229,7 +229,6 @@ function filtri() {
 
     success: function(data){
      console.log(data);
-
      genera_card(data);
 
     },
@@ -252,7 +251,8 @@ function genera_card(informazioni) {
   for (var i = 0; i < informazioni.result.length; i++) {
     if (informazioni.result[i].public) {
       var context = {
-        // "foto":
+        'id': informazioni.result[i].id,
+        'img_url': informazioni.result[i].url_img,
         "titolo": informazioni.result[i].title,
         "citta": informazioni.result[i].city,
         "numero_civico": informazioni.result[i].civic_number,
