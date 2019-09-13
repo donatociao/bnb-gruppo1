@@ -109,8 +109,9 @@
             </div>
           </div>
         </div>
-        {{-- Mappa script --}}
-        <script>
+
+        {{-- Mappa script X DANIELE: DECOMMETARE APPENA ABBIAMO DEFINITO LA VARIABILE CHE ARRIVA --}}
+        {{-- <script>
           // inizializzo:
           var platform = new H.service.Platform({
             'apikey': 'nTD1tckbHBV6EQuuwpL2THYIWMP-AYuoN9cJJPep0TA'
@@ -133,5 +134,5 @@
 
             // aggiungo marker alla mappa:
           map.addObject(marker);
-        </script>
+        </script> --}}
       @endsection
