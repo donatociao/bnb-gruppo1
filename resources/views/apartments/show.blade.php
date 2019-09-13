@@ -42,74 +42,96 @@
                 Longitudine: <input id="lon_map" type="text" value="{{$localizzazione->longitude}}">
               </div>
 
-              <div class="mappa_div">
-                <button id="mappa" type="button" name="button">Vedi mappa</button>
-                <img src="" alt="">
-              </div>
-              <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Wi-Fi</th>
-      <th scope="col">Parking</th>
-      <th scope="col">Piscina</th>
-      <th scope="col">Portineria</th>
-      <th scope="col">Sauna</th>
-      <th scope="col">Vista mare</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">
-        @if ($servizi->wifi == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </th>
-      <td>
-        @if ($servizi->parking == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </td>
-      <td>
-        @if ($servizi->pool == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </td>
-      <td>
-        @if ($servizi->reception == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </td>
-      <td>
-        @if ($servizi->spa == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </td>
-      <td>
-        @if ($servizi->sea_view == 1)
-          <i class="far text-success fa-check-circle fa-2x"></i>
-        @else
-          <i class="far text-danger fa-times-circle fa-2x"></i>
-        @endif
-      </td>
-    </tr>
+              <div style="width: 640px; height: 480px" id="mapContainer"></div>
 
-  </tbody>
-</table>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Wi-Fi</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Piscina</th>
+                    <th scope="col">Portineria</th>
+                    <th scope="col">Sauna</th>
+                    <th scope="col">Vista mare</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      @if ($servizi->wifi == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </th>
+                    <td>
+                      @if ($servizi->parking == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </td>
+                    <td>
+                      @if ($servizi->pool == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </td>
+                    <td>
+                      @if ($servizi->reception == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </td>
+                    <td>
+                      @if ($servizi->spa == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </td>
+                    <td>
+                      @if ($servizi->sea_view == 1)
+                        <i class="far text-success fa-check-circle fa-2x"></i>
+                      @else
+                        <i class="far text-danger fa-times-circle fa-2x"></i>
+                      @endif
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="">
+                <a class="btn btn-primary" href="{{route('apartments.index')}}">Torna agli appartamenti</a>
+              </div>
             </div>
-            <div class="">
-              <a class="btn btn-primary" href="{{route('apartments.index')}}">Torna agli appartamenti</a>
-            </div>
+          </div>
         </div>
-    </div>
-</div>
-@endsection
+        {{-- Mappa script --}}
+        <script>
+          // inizializzo:
+          var platform = new H.service.Platform({
+            'apikey': 'nTD1tckbHBV6EQuuwpL2THYIWMP-AYuoN9cJJPep0TA'
+          });
+
+          // definisco tipo mappa
+          var maptypes = platform.createDefaultLayers();
+
+          // visualizzo mappa:
+          var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.vector.normal.map,
+            {
+              zoom: 10,
+              center: { lng: {{$localizzazione->longitude}}, lat: {{$localizzazione->latitude}} }
+            });
+
+            // creo marker
+          var marker = new H.map.Marker({ lat: {{$localizzazione->latitude}}, lng: {{$localizzazione->longitude}} });
+
+            // aggiungo marker alla mappa:
+          map.addObject(marker);
+        </script>
+      @endsection
