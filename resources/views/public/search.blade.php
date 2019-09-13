@@ -5,6 +5,7 @@
     {{-- FILTRI --}}
   <div class="container container-form2">
     <div class="form-group col-lg-12 col-md-12 col-sm-12">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <label for="km">Km:</label>
       <input type="number" id="km" class="form-control" name="km" placeholder="In che raggio di km stai cercando?" value="">
@@ -12,6 +13,10 @@
       <label class="info" for="km">Entro km:</label>
       <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci n° minimo di km" value="">
 >>>>>>> Stashed changes
+=======
+      <label for="km">Entro km:</label>
+      <input type="number" id="km" class="form-control" name="km" placeholder="Inserisci numero minimo di stanze" value="">
+>>>>>>> Sto apparando un danno
 
       <label class="info" for="rooms_number">Numero minimo di stanze:</label>
       <input type="number" id="stanze" class="form-control" name="rooms_number" placeholder="Inserisci n° minimo di stanze" value="">
@@ -45,11 +50,15 @@
     </div>
 <<<<<<< Updated upstream
 
+<<<<<<< HEAD
     <div class="d-none form-group">
 =======
   </div>
     <div style="display: none" class="form-group">
 >>>>>>> Stashed changes
+=======
+    <div style="display: none" class="form-group">
+>>>>>>> Sto apparando un danno
       <input  id="latitudine" type="text"  name="latitude" value="{{$latitudine}}">
       <input id="longitudine" type="text"  name="latitude" value="{{$longitudine}}">
     </div>
@@ -68,7 +77,7 @@
             </div>
 <<<<<<< Updated upstream
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> Numero stanze: @{{numero_stanze}}</li>
+              <li class="list-group-item">Numero stanze: @{{numero_stanze}}</li>
               <li class="list-group-item">Numero ospiti: @{{numero_letti}}</li>
               <li class="list-group-item">Numero bagni: @{{numero_bagni}}</li>
 =======
