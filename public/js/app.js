@@ -49221,7 +49221,7 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento); // Funzione che genera le cards e le inserisce nell'html
 
 function genera_card(informazioni) {
-  $(".container").empty();
+  $(".container-handlebars").empty();
 
   for (var i = 0; i < informazioni.result.length; i++) {
     if (informazioni.result[i]["public"]) {
@@ -49244,7 +49244,7 @@ function genera_card(informazioni) {
         "distanza": informazioni.result[i].distance
       };
       var html = template(context);
-      $(".container").append(html);
+      $(".container-handlebars").append(html);
     }
   }
 } ////////////////////////////////////////////////////////////////////////////////
@@ -49327,8 +49327,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

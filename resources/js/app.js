@@ -246,7 +246,7 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento);
 // Funzione che genera le cards e le inserisce nell'html
 function genera_card(informazioni) {
-  $(".container").empty();
+  $(".container-handlebars").empty();
   for (var i = 0; i < informazioni.result.length; i++) {
     if (informazioni.result[i].public) {
       var context = {
@@ -268,7 +268,7 @@ function genera_card(informazioni) {
         "distanza": informazioni.result[i].distance
       }
       var html = template(context);
-      $(".container").append(html);
+      $(".container-handlebars").append(html);
     }
   }
 }
