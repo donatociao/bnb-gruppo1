@@ -108,7 +108,7 @@
   margin-top: 80px;
 }
 
-
+//search.blade.php
 .visual3{
   max-width: 150px;
   height: 45px;
@@ -139,7 +139,6 @@
 }
 
 .card-app{
-  margin: 50px 4px;
   background-color: #2d3436;
   color: #fff;
   border: 1px solid #fff;
@@ -150,11 +149,6 @@
   background-color: #2d3436;
   color: #fff;
   border: 1px solid #fff;
-}
-
-
-.visual{
-  height: 100px;
 }
 
 .card-img-top{
@@ -174,7 +168,7 @@
   color: #1abc9c;
   font-weight: bold;
   border-radius: 10px;
-  margin: 28px 46px;
+  margin: 10px 54px;
 }
 
 #sea_view{
@@ -187,4 +181,8 @@
   font-weight: bold;
   text-align: center;
   margin: 10px 10px;
+}
+
+.container-ff{
+  max-width: 100%;
 }

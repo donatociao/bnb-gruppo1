@@ -73,8 +73,6 @@
           <div class="copyright">© 2019 BoolBnB, Inc. All rights reserved.</div>
         </div>
       </div>
-<<<<<<< Updated upstream
-=======
       {{-- <script>
         // inizializzo:
         var platform = new H.service.Platform({
@@ -99,6 +97,5 @@
           // aggiungo marker alla mappa:
         map.addObject(marker);
       </script> --}}
->>>>>>> Stashed changes
   </body>
 </html>

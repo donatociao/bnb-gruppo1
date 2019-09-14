@@ -3,7 +3,7 @@
 @section('content')
 
     {{-- FILTRI --}}
-  <div class="container container-form2">
+  <div class="container-form2">
     <div class="form-group col-lg-12 col-md-12 col-sm-12">
 
       <label class="info" for="km">Entro km:</label>
@@ -46,12 +46,13 @@
     </div>
 
     {{-- CONTAINER INIZIALE CHE POI VIENE SOSTITUITO CON LE CARD DI HANDLEBARS SE SI ATTIVA QUALCHE FILTRO --}}
-    <div class="container container-form-app d-flex justify-content-around container-handlebars">
+  <div class="container-ff">
+    <div class="container-form-app justify-content-around container-handlebars">
       @foreach ($appartamenti as $appartamento)
           @if ($appartamento->public)
-          <div class="card card-app col-lg-3 col-md-4 col-sm-12">
+          <div class="card card-app col-lg-4 col-md-6 col-sm-12">
             <h5 class="card-title2">{{$appartamento->title}}</h5>
-            <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="card-img-top">
+            <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="card-img-top w-100">
             <div class="card-body h-25">
               <p class="card-title">{{$appartamento->street}} {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
               <p class="card-title">Distanza: {{$appartamento->distance}}</p>
@@ -71,12 +72,12 @@
           @endif
         @endforeach
     </div>
-
+  </div>
     {{-- SCRIPT DI HANDLEBARS --}}
     <script id="card" type="text/x-handlebars-template">
-      <div class="card card-app2 col-lg-3 col-md-4 col-sm-12" style="width: 18rem;">
+      <div class="card card-app col-lg-4 col-md-6 col-sm-12">
           <h5 class="card-title2">@{{titolo}}</h5>
-        <img src="http://localhost:8000/storage/@{{img_url}}" class="card-img-top">
+        <img src="http://localhost:8000/storage/@{{img_url}}" class="card-img-top w-100">
         <div class="card-body h-25">
           <p class="card-title">@{{via}} @{{numero_civico}}, @{{citta}}, @{{cap}}, @{{provincia}}</p>
           <p class="card-title">Distanza: @{{distanza}}</p>

@@ -11030,7 +11030,6 @@ body {
 }
 
 .card-app {
-  margin: 50px 4px;
   background-color: #2d3436;
   color: #fff;
   border: 1px solid #fff;
@@ -11040,10 +11039,6 @@ body {
   background-color: #2d3436;
   color: #fff;
   border: 1px solid #fff;
-}
-
-.visual {
-  height: 100px;
 }
 
 .card-img-top {
@@ -11063,7 +11058,7 @@ body {
   color: #1abc9c;
   font-weight: bold;
   border-radius: 10px;
-  margin: 28px 46px;
+  margin: 10px 54px;
 }
 
 #sea_view {
@@ -11076,6 +11071,10 @@ body {
   font-weight: bold;
   text-align: center;
   margin: 10px 10px;
+}
+
+.container-ff {
+  max-width: 100%;
 }
 
 .footer-container {
@@ -11194,9 +11193,9 @@ label {
 
 .container-form2 {
   max-width: 100%;
-  max-height: auto;
   margin-top: 80px;
   margin: auto;
+  height: 1126px;
   background-color: #2d3436;
 }
 
