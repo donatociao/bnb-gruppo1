@@ -11026,7 +11026,7 @@ body {
 .container-form-app {
   max-width: 100%;
   background-color: #b2bec3;
-  height: auto;
+  display: flex;
 }
 
 .card-app {
@@ -11039,10 +11039,6 @@ body {
   background-color: #2d3436;
   color: #fff;
   border: 1px solid #fff;
-}
-
-.card-img-top {
-  margin-top: 15px;
 }
 
 .list-group-flush .list-group-item {
@@ -11066,15 +11062,10 @@ body {
 }
 
 .card-title2 {
-  font-size: 18px;
   color: #1abc9c;
   font-weight: bold;
   text-align: center;
   margin: 10px 10px;
-}
-
-.container-ff {
-  max-width: 100%;
 }
 
 .footer-container {
@@ -11147,13 +11138,6 @@ a:hover {
   margin-left: 10px;
 }
 
-.container-form {
-  max-width: 100%;
-  max-height: auto;
-  margin-top: 80px;
-  margin: auto;
-}
-
 .proprietario {
   margin-top: 55px;
   font-size: 30px;
@@ -11220,5 +11204,13 @@ h2 {
 
 .container_filter {
   max-width: 1260px;
+}
+
+.container-cards {
+  max-width: 100%;
+}
+
+.h-15 {
+  height: 15% !important;
 }
 

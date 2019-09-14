@@ -110,7 +110,6 @@
           </div>
         </div>
 
-        {{-- Mappa script X DANIELE: DECOMMETARE APPENA ABBIAMO DEFINITO LA VARIABILE CHE ARRIVA --}}
         <script>
           // inizializzo:
           var platform = new H.service.Platform({
