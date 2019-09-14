@@ -49003,8 +49003,6 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49223,73 +49221,33 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento); // Funzione che genera le cards e le inserisce nell'html
 
 function genera_card(informazioni) {
-  $(".container-handlebars").empty();
+  $(".container").empty();
 
-  if (informazioni.result.length > 0) {
-    for (var i = 0; i < informazioni.result.length; i++) {
-      if (informazioni.result[i]["public"]) {
-        var context = _defineProperty({
-          'address_id': informazioni.result[i].address_id,
-          'img_url': informazioni.result[i].url_img,
-          "titolo": informazioni.result[i].title,
-          "citta": informazioni.result[i].city,
-          "via": informazioni.result[i].street,
-          "cap": informazioni.result[i].cap,
-          "distanza": informazioni.result[i].distance,
-          "provincia": informazioni.result[i].prov,
-          "numero_civico": informazioni.result[i].civic_number,
-          "numero_stanze": informazioni.result[i].rooms_number,
-          "numero_letti": informazioni.result[i].host_number,
-          "numero_bagni": informazioni.result[i].wc_number,
-          "metri_quadri": informazioni.result[i].mq,
-          "wifi": informazioni.result[i].wifi,
-          "parcheggio": informazioni.result[i].parking,
-          "piscina": informazioni.result[i].pool,
-          "portineria": informazioni.result[i].reception,
-          "sauna": informazioni.result[i].spa,
-          "vista_mare": informazioni.result[i].sea_view
-        }, "distanza", informazioni.result[i].distance);
-
-        var html = template(context);
-        $(".container-handlebars").append(html);
-      }
+  for (var i = 0; i < informazioni.result.length; i++) {
+    if (informazioni.result[i]["public"]) {
+      var context = {
+        'address_id': informazioni.result[i].address_id,
+        'img_url': informazioni.result[i].url_img,
+        "titolo": informazioni.result[i].title,
+        "citta": informazioni.result[i].city,
+        "numero_civico": informazioni.result[i].civic_number,
+        "numero_stanze": informazioni.result[i].rooms_number,
+        "numero_letti": informazioni.result[i].host_number,
+        "numero_bagni": informazioni.result[i].wc_number,
+        "metri_quadri": informazioni.result[i].mq,
+        "wifi": informazioni.result[i].wifi,
+        "parcheggio": informazioni.result[i].parking,
+        "piscina": informazioni.result[i].pool,
+        "portineria": informazioni.result[i].reception,
+        "sauna": informazioni.result[i].spa,
+        "vista_mare": informazioni.result[i].sea_view,
+        "distanza": informazioni.result[i].distance
+      };
+      var html = template(context);
+      $(".container").append(html);
     }
-  } else {
-    $(".container-handlebars").append('NESSUN APPARTAMENTO TROVATO');
   }
 } ////////////////////////////////////////////////////////////////////////////////
-//mappa
-
-
-$('#mappa').click(function () {
-  var centro_lat = $("#lat_map").val(); //recupera la latitudine
-
-  var centro_lon = $("#lon_map").val(); //recupera la longitudine
-
-  console.log(centro_lat);
-  console.log(centro_lon);
-  var centro = [centro_lat, centro_lon];
-  console.log(centro);
-  $.ajax({
-    type: "GET",
-    // specifico la URL della risorsa da contattare
-    url: "https://api.tomtom.com/map/1/staticimage",
-    data: {
-      "versionNumber": '1',
-      "center": centro_lat + ',' + centro_lon,
-      "width": '512',
-      "height": '512',
-      "key": "G2OWs8LV0893ksnDEHmo7ZAWV7gddL4X"
-    },
-    success: function success(data) {
-      console.log(data);
-      $('.mappa_div').html('<img src="data:image/png;base64,' + data + '" />'); // $('.mappa_div').html("<img src='mamt'/>");
-    },
-    error: function error() {
-      alert("Chiamata fallita!!!");
-    }
-  });
-});
 
 /***/ }),
 
@@ -49369,8 +49327,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\bnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

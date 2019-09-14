@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="container" style="position: relative; top: 120px;">
-    <h1 style="font-size: 30px; margin: 30px 0;">Modifica appartamento: {{$appartamento->title}}</h1>
+    <h1 style="font-size: 30px; margin: 30px 0;"> <i class="fas fa-pencil-alt"></i> Modifica appartamento: {{$appartamento->title}}</h1>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -38,10 +38,10 @@
       </div>
       <div class="form-group">
         <label for="url_img">Foto appartamento:</label>
-        <div class="">
-          <img src="{{ asset('storage/'. $appartamento->url_img) }}">
+        <div>
+          <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="img-thumbnail" style="width:700px;height:350px;">
         </div>
-        <input type="file" class="form-control-file" name="url_img">
+        <input type="file" class="form-control-file mt-3" name="url_img">
       </div>
 
 
@@ -72,8 +72,8 @@
 
       <div class="form-group">
         <label for="geolocals">Coordinate:</label>
-        <input class="lat_input" type="text"  name="latitude" value="{{ old('latitude', $localizzazione->latitude) }}">Latitudine
-        <input class="lon_input" type="text"  name="longitude" value="{{ old('longitude', $localizzazione->longitude) }}">Longitudine
+        <input class="lat_input" type="text"  name="latitude" value="{{ old('latitude', $localizzazione->latitude) }}">
+        <input class="lon_input" type="text"  name="longitude" value="{{ old('longitude', $localizzazione->longitude) }}">
       </div>
 
       <div class="form-group">

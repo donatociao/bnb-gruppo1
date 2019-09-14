@@ -5,34 +5,34 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card_container">
-              <div class="">
-                ID: {{$appartamento->id}}
+              <div class="lead">
+                <strong> ID:</strong> {{$appartamento->id}}
               </div>
-              <div class="">
+              <div class="lead">
                 <h1>{{$appartamento->title}}</h1>
               </div>
-              <div class="" style="height: 250px; width: 250px;">
-                <img style="width: 100%;" src="{{ asset('storage/'. $appartamento->url_img) }}">
+              <div class="my-3">
+                <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="img-thumbnail" style="width:700px;height:350px;">
               </div>
-              <div class="">
-                Numero stanze: {{$appartamento->rooms_number}}
+              <div class="lead">
+                <strong> Numero stanze:</strong> {{$appartamento->rooms_number}}
               </div>
-              <div class="">
-                Numero letti: {{$appartamento->host_number}}
+              <div class="lead">
+                <strong> Numero letti:</strong> {{$appartamento->host_number}}
               </div>
-              <div class="">
-                Numero bagni: {{$appartamento->wc_number}}
+              <div class="lead">
+                <strong> Numero bagni:</strong> {{$appartamento->wc_number}}
               </div>
-              <div class="">
-                Metri quadri: {{$appartamento->mq}}
-              </div>
-
-              <div class="">
-                Indirizzo: {{$indirizzo->city}}, {{$indirizzo->street}}, {{$indirizzo->civic_number}} - {{$indirizzo->cap}}
+              <div class="lead">
+                <strong> Metri quadri:</strong> {{$appartamento->mq}}
               </div>
 
-              <div class="">
-                Provincia: {{$indirizzo->prov}}
+              <div class="lead">
+                <strong> Indirizzo:</strong> {{$indirizzo->city}}, {{$indirizzo->street}}, {{$indirizzo->civic_number}} - {{$indirizzo->cap}}
+              </div>
+
+              <div class="lead">
+                <strong>Provincia:</strong> {{$indirizzo->prov}}
               </div>
 
               <div class="d-none">
@@ -42,7 +42,7 @@
                 Longitudine: <input id="lon_map" type="text" value="{{$localizzazione->longitude}}">
               </div>
 
-              <div style="width: 100%; height: 480px" id="mapContainer"></div>
+              <div class="my-3" style="width: 100%; height: 480px" id="mapContainer"></div>
 
               <table class="table table-striped">
                 <thead>
@@ -103,7 +103,7 @@
                 </tbody>
               </table>
               </div>
-              <div class="">
+              <div class="mb-4">
                 <a class="btn btn-primary" href="{{route('apartments.index')}}">Torna agli appartamenti</a>
               </div>
             </div>

@@ -4,6 +4,11 @@
 <div class="container" style="position: relative; top: 120px;">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            <div class="title">
+              <h1><i class="far fa-envelope-open fa-2x mr-2"></i> Lista delle richieste </h1>
+              <p>Controlla tutti le richieste degli utenti interessati!</p>
+            </div>
+
             <div class="card_container">
               <table class="table table-striped mt-7">
                 <thead>
