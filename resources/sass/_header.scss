@@ -135,7 +135,7 @@
 .container-form-app{
   max-width: 100%;
   background-color: #b2bec3;
-  height: auto;
+  display: flex;
 }
 
 .card-app{
@@ -151,9 +151,6 @@
   border: 1px solid #fff;
 }
 
-.card-img-top{
-  margin-top: 15px;
-}
 
 .list-group-flush .list-group-item {
   background-color: #2d3436;
@@ -176,13 +173,8 @@
 }
 
 .card-title2{
-  font-size: 18px;
   color: #1abc9c;
   font-weight: bold;
   text-align: center;
   margin: 10px 10px;
-}
-
-.container-ff{
-  max-width: 100%;
 }
