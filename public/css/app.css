@@ -11175,6 +11175,14 @@ label {
   border-radius: 10px;
 }
 
+.container-form2 {
+  max-width: 100%;
+  margin-top: 80px;
+  margin: auto;
+  height: 1126px;
+  background-color: #2d3436;
+}
+
 .container-maps {
   width: 100%;
   height: auto;
