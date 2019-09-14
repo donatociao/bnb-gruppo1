@@ -40,7 +40,7 @@
                         <div class="row align-items-center">
                             <div class="col">
                                 <h6 class="text-uppercase text-muted ls-1 mb-1">Statistiche</h6>
-                                <h2 class="mb-0">Messaggi ricevuti</h2>
+                                <h2 class="mb-0">Visualizzazioni appartamenti</h2>
                             </div>
                         </div>
                     </div>
@@ -54,6 +54,8 @@
             </div>
         </div>
 
+        <input class="d-none" id="apartment_counter" type="text" name="" value="{{$counter}}">
+        <input class="d-none" id="title_counter" type="text" name="" value="{{$title}}">
 
         @include('layouts.footers.auth')
     </div>

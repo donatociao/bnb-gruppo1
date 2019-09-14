@@ -29,12 +29,22 @@ class HomeController extends Controller
       $id = $user->id;
       $appartamenti_caricati = DB::table('apartments')->where('user_id', '=', Auth::user()->id)->get();
       $conteggio_caricati = $appartamenti_caricati->count();
+
+      // Counter visualizzazioni singolo appartamento
       $array_counter = [];
       foreach ($appartamenti_caricati as $value) {
         $counter = $value->counter;
         array_push($array_counter, $counter);
       }
-      $array_string = implode("", $array_counter);
+      $array_string_counter = implode(",", $array_counter);
+
+      // Titoli appartamenti
+      $array_title = [];
+      foreach ($appartamenti_caricati as $value) {
+        $title = $value->title;
+        array_push($array_title, $title);
+      }
+      $array_string_title = implode(",", $array_title);
 
       //contatore messaggi ricevuti
       $messaggi_ricevuti = DB::table('messages')->where('user_id', '=', Auth::user()->id)->get();
@@ -43,7 +53,8 @@ class HomeController extends Controller
       $data = [
         'caricati' => $conteggio_caricati,
         'ricevuti' => $conteggio_messaggi,
-        'counter' => $array_string
+        'counter' => $array_string_counter,
+        'title' => $array_string_title
       ];
         return view('dashboard', $data);
     }

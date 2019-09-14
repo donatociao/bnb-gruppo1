@@ -926,11 +926,12 @@ var OrdersChart = (function() {
 
 	////////////////////////////////////////////////////////////////////////////// Init chart
 	function initChart($chart) {
-		var conteggio = $('#counter').val();
-		var array_count = Array.from(conteggio)
-		// var array_count = conteggio.split(" ");
-		console.log(conteggio);
+		var conteggio = $('#apartment_counter').val();
+		var array_count = conteggio.split(",");
 		console.log(array_count);
+		var title = $('#title_counter').val();
+		var array_title = title.split(",");
+		console.log(array_title);
 		// Create chart
 		var ordersChart = new Chart($chart, {
 			type: 'bar',
@@ -939,8 +940,8 @@ var OrdersChart = (function() {
 					yAxes: [{
 						ticks: {
 							callback: function(value) {
-								if (!(value % 10)) {
-									//return '$' + value + 'k'
+								if (!(value % 1)) {
+									// return '$' + value + 'k'
 									return value
 								}
 							}
@@ -966,10 +967,10 @@ var OrdersChart = (function() {
 				}
 			},
 			data: {
-				labels: ['ID 1', 'ID 2', 'ID 3', 'ID 4', 'ID 5', 'ID 6'],
+				labels: array_title,
 				datasets: [{
-					label: 'Sales',
-					data: [0, 20, 30, 0, 17, 29]
+					label: 'Visualizzazioni',
+					data: array_count
 				}]
 			}
 		});
