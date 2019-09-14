@@ -924,9 +924,13 @@ var OrdersChart = (function() {
 	// Methods
 	//
 
-	// Init chart
+	////////////////////////////////////////////////////////////////////////////// Init chart
 	function initChart($chart) {
-
+		var conteggio = $('#counter').val();
+		var array_count = Array.from(conteggio)
+		// var array_count = conteggio.split(" ");
+		console.log(conteggio);
+		console.log(array_count);
 		// Create chart
 		var ordersChart = new Chart($chart, {
 			type: 'bar',
