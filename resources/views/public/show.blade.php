@@ -19,6 +19,65 @@
               </div>
               <div class="img img-apartment col-lg-6 col-md-12 col-sm-12">
                 <img src="{{ asset('storage/'. $appartamento->url_img) }}">
+                <table class="bg-white table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Wi-Fi</th>
+                      <th scope="col">Parking</th>
+                      <th scope="col">Piscina</th>
+                      <th scope="col">Portineria</th>
+                      <th scope="col">Sauna</th>
+                      <th scope="col">Vista mare</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        @if ($servizi->wifi == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </th>
+                      <td>
+                        @if ($servizi->parking == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </td>
+                      <td>
+                        @if ($servizi->pool == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </td>
+                      <td>
+                        @if ($servizi->reception == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </td>
+                      <td>
+                        @if ($servizi->spa == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </td>
+                      <td>
+                        @if ($servizi->sea_view == 1)
+                          <i class="far text-success fa-check-circle fa-2x"></i>
+                        @else
+                          <i class="far text-danger fa-times-circle fa-2x"></i>
+                        @endif
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
                 <div class="btn btn-container">
                   <a class="btn-h btn-dark" href="{{route('homepage')}}">Torna alla homepage</a>
                 </div>
@@ -57,48 +116,7 @@
                 <div class="d-none description">
                   Longitudine: {{$localizzazione->longitude}}
                 </div>
-                <div class="description">
-                  @if ($servizi->wifi == 1)
-                    WiFi: Si
-                  @else
-                    WiFi: No
-                  @endif
-                </div>
-                <div class="description">
-                  @if ($servizi->parking == 1)
-                    Parcheggio: Si
-                  @else
-                    Parcheggio: No
-                  @endif
-                </div>
-                <div class="description">
-                  @if ($servizi->pool == 1)
-                    Piscina: Si
-                  @else
-                    Piscina: No
-                  @endif
-                </div>
-                <div class="description">
-                  @if ($servizi->reception == 1)
-                    Portineria: Si
-                  @else
-                    Portineria: No
-                  @endif
-                </div>
-                <div class="description">
-                  @if ($servizi->spa == 1)
-                    Sauna: Si
-                  @else
-                    Sauna: No
-                  @endif
-                </div>
-                <div class="description">
-                  @if ($servizi->sea_view == 1)
-                    Vista mare: Si
-                  @else
-                    Vista mare: No
-                  @endif
-                </div>
+
               </div>
             </div>
         </div>

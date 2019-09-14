@@ -28,11 +28,11 @@
                             <div class="col">
                                 <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                     <div>
-                                        <span class="heading">xx</span>
+                                        <span class="heading">{{$caricati}}</span>
                                         <span class="description">{{ __('Appartamenti') }}</span>
                                     </div>
                                     <div>
-                                        <span class="heading">xx</span>
+                                        <span class="heading">{{$ricevuti}}</span>
                                         <span class="description">{{ __('Richieste') }}</span>
                                     </div>
                                 </div>
