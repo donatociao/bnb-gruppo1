@@ -30,7 +30,6 @@
                 @csrf
             </form>
             @include('layouts.navbars.sidebar')
-
         @endauth
 
         <div class="main-content">
@@ -40,7 +39,6 @@
 
         @guest()
             @include('layouts.footers.guest')
-
         @endguest
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
@@ -51,9 +49,6 @@
         <!-- Argon JS -->
 
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
-
-
-
     </body>
 
 </html>

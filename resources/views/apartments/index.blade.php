@@ -10,7 +10,6 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
-
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -20,9 +19,9 @@
                     <th scope="row">{{$apartment->id}}</th>
                     <td>{{$apartment->title}}</td>
                     <td>
-                      <a class="btn btn-dark" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
-                      <a class="btn btn-secondary" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>
-                      <form id="delete" action="{{ route('apartments.destroy', $apartment->id) }}" method="post">
+                      <a class="d-inline-block btn btn-dark" href="{{route('apartments.show', $apartment->id)}}">Visualizza</a>
+                      <a class="d-inline-block btn btn-secondary" href="{{route('apartments.edit', $apartment->id)}}">Modifica</a>
+                      <form class="d-inline-block" id="delete" action="{{ route('apartments.destroy', $apartment->id) }}" method="post">
                         @method('DELETE')
                         @csrf
                         <input class="btn btn-danger" type="submit" name="" value="Cancella">

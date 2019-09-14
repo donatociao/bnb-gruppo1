@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
+use DB;
 
 class HomeController extends Controller
 {
@@ -21,6 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+
+      //contatore appartamenti inseriti da completare by donato
+      $user = Auth::user();
+      $id = $user->id;
+      $appartamenti_caricati = DB::table('apartments')->where('id', '=>', Auth::user()->id)->count();
+      $conteggio_caricati = $appartamenti_caricati;
+      $data = [
+        'caricati' => $conteggio_caricati,
+      ];
+        return view('dashboard', $data);
     }
 }
