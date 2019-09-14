@@ -11,7 +11,7 @@
               </div>
               <div class="col-lg-12 py-2 border border-secondary">
                 <i class="fas fa-home fa-2x"></i>
-                <h4 class="d-inline-block pl-3"><strong>Appartamento:</strong> {{$appartamento->title}} (<strong>Codice App.:</strong> {{$messaggio->apartment_id}})</h4>
+                <h4 class="d-inline-block pl-3"><strong>Codice App.:</strong> {{$messaggio->apartment_id}}</h4>
               </div>
               <div class="col-lg-12 py-2 border border-secondary" style="min-height:130px;">
                 <i class="far fa-envelope-open fa-2x"></i>
