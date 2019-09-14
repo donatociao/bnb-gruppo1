@@ -24,13 +24,19 @@ class HomeController extends Controller
     public function index()
     {
 
-      //contatore appartamenti inseriti da completare by donato
+      //contatore appartamenti inseriti
       $user = Auth::user();
       $id = $user->id;
-      $appartamenti_caricati = DB::table('apartments')->where('id', '=>', Auth::user()->id)->count();
-      $conteggio_caricati = $appartamenti_caricati;
+      $appartamenti_caricati = DB::table('apartments')->where('user_id', '=', Auth::user()->id)->get();
+      $conteggio_caricati = $appartamenti_caricati->count();
+
+      //contatore messaggi ricevuti
+      $messaggi_ricevuti = DB::table('messages')->where('user_id', '=', Auth::user()->id)->get();
+      $conteggio_messaggi = $messaggi_ricevuti->count();
+
       $data = [
         'caricati' => $conteggio_caricati,
+        'ricevuti' => $conteggio_messaggi,
       ];
         return view('dashboard', $data);
     }
