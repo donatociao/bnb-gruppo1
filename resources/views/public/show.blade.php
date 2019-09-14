@@ -51,10 +51,10 @@
                 <div class="description">
                   Numero civico: {{$indirizzo->civic_number}}
                 </div>
-                <div class="description">
+                <div class="d-none description">
                   Latitudine: {{$localizzazione->latitude}}
                 </div>
-                <div class="description">
+                <div class="d-none description">
                   Longitudine: {{$localizzazione->longitude}}
                 </div>
                 <div class="description">
