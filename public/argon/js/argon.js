@@ -928,10 +928,8 @@ var OrdersChart = (function() {
 	function initChart($chart) {
 		var conteggio = $('#apartment_counter').val();
 		var array_count = conteggio.split(",");
-		console.log(array_count);
 		var title = $('#title_counter').val();
 		var array_title = title.split(",");
-		console.log(array_title);
 		// Create chart
 		var ordersChart = new Chart($chart, {
 			type: 'bar',

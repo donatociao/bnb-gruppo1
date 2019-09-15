@@ -135,4 +135,4 @@
             // aggiungo marker alla mappa:
           map.addObject(marker);
         </script>
-      @endsection
+@endsection

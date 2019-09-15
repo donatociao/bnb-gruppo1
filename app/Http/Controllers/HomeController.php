@@ -23,7 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
       //contatore appartamenti inseriti
       $user = Auth::user();
       $id = $user->id;

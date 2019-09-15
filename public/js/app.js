@@ -49168,6 +49168,44 @@ $(document).ready(function () {
     }
 
     filtri();
+  }); ///// GRAFICO
+
+  $('.grafico').append('<canvas id="grafico_barre" width="400" height="400"></canvas>');
+  var ctx = $('#grafico_barre');
+  var dati = $('#apartment').val();
+  var array = dati.split(",");
+  var titolo = $('#title').val();
+  console.log(array);
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Visualizzazioni', 'Messaggi'],
+      datasets: [{
+        label: titolo,
+        backgroundColor: ['yellow', 'red'],
+        data: array
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          barPercentage: 0.3
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      legend: {
+        labels: {
+          fontSize: 20,
+          fontColor: 'grey',
+          boxWidth: 0,
+          fontStyle: 'bold'
+        }
+      }
+    }
   });
 }); // Funzione chiamata ajax per filtrare appartamenti
 
@@ -49247,7 +49285,7 @@ function genera_card(informazioni) {
       $(".container-handlebars").append(html);
     }
   }
-} ////////////////////////////////////////////////////////////////////////////////
+}
 
 /***/ }),
 

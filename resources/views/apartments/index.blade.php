@@ -30,6 +30,7 @@
                 @csrf
                 <input class="btn btn-danger" type="submit" name="" value="Cancella">
               </form>
+              <a class="d-inline-block btn btn-info" href="{{route('chart', $apartment->id)}}">Statistiche</a>
               </td>
             </tr>
           </tbody>

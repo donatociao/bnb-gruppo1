@@ -25,6 +25,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 
+    {{-- Grafico --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 
     <!--Css -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">

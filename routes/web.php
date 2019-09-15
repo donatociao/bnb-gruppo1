@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/apartments','ApartmentsController');
 
+Route::get('/chart/{id}', 'ChartController@index')->name('chart'); // Rotta statistiche
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
