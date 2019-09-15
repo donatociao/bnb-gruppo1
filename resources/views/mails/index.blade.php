@@ -9,8 +9,8 @@
               <p>Controlla tutti le richieste degli utenti interessati!</p>
             </div>
 
-            <div class="card_container">
-              <table class="table table-striped mt-7">
+            <div class="table-responsive card_container">
+              <table class="table table-striped mt-5">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
