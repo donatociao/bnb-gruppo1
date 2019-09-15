@@ -20,7 +20,7 @@ class MessagesTableSeeder extends Seeder
         $new_request = new Message();
         $new_request->message = $faker->text(rand(35,400));
         $new_request->email_req = $faker->email();
-        $new_request->user_id = rand(1,5);
+        $new_request->user_id = rand(1,4);
         $new_request->apartment_id = rand(1,10);
         $new_request->save();
       }

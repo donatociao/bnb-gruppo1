@@ -14,8 +14,7 @@
                 <h4 class="d-inline-block pl-3"><strong>Codice App.:</strong> {{$messaggio->apartment_id}}</h4>
               </div>
               <div class="col-lg-12 py-2 border border-secondary" style="min-height:130px;">
-                <i class="far fa-envelope-open fa-2x"></i>
-                <h4 class="d-inline-block pl-3"><strong>Messaggio:</strong> {{$messaggio->message}}</h4>
+                <h4 class="d-inline-block"><i class="far fa-envelope-open fa-2x pr-3"></i><strong>Messaggio:</strong> {{$messaggio->message}}</h4>
               </div>
               <div class="col-lg-12 py-2 border border-secondary">
                 <h5><strong>Inviato il:</strong> {{$messaggio->created_at}}</h5>
