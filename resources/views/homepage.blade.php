@@ -39,7 +39,7 @@
                 <form class="" action="{{route('public.search')}}" method="get">
                   @csrf
                   <div class="col-sm-12 col-md-12 col-lg-12">
-                      <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless col-s-12 col-md-12" type="search" placeholder="Inserisci la città...">
+                      <input id="query_cerca" class="cerca form-control form-control-lg form-control-borderless col-s-12 col-md-12" type="search" placeholder="Inserisci la città..." required>
                   </div>
                   <input  id="lat_search" type="text" name="lat_search" class="form-control d-none" value="" placeholder="">
                   <input  id="lon_search" type="text" name="lon_search" class="form-control d-none" value="" placeholder="">
