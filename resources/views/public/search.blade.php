@@ -101,3 +101,4 @@
           </div>
     </script>
 @endsection
+@section('title','BoolBnB - Cerca appartamento')

@@ -12,3 +12,4 @@
   </div>
 </div>
 @endsection
+@section('title','BoolBnB - Messaggio inviato')

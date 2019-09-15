@@ -207,3 +207,4 @@
     // aggiungo marker alla mappa:
   map.addObject(marker);
 </script>
+@section('title','BoolBnB - Visualizza appartamento')

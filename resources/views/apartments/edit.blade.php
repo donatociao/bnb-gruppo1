@@ -124,3 +124,4 @@
   </div>
 
 @endsection
+@section('title','BoolBnB - Modifica appartamento')

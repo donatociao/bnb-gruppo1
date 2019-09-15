@@ -46,3 +46,4 @@
   </div>
 </div>
 @endsection
+@section('title','BoolBnB - Tutti i tuoi appartamenti')

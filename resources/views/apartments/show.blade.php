@@ -136,3 +136,4 @@
           map.addObject(marker);
         </script>
 @endsection
+@section('title','BoolBnB - Visualizza appartamento')
