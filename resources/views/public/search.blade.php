@@ -56,7 +56,11 @@
             <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="img-thumbnail mt-2 w-100">
             <div class="card-body h-15">
               <p class="card-title">{{$appartamento->street}}, {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
-              <p class="card-title">Distanza: {{$appartamento->distance}}</p>
+              @php
+                $distanza = $appartamento->distance;
+                $dist = round($distanza/1000);
+              @endphp
+              <p class="card-title">Distanza: circa {{$dist}} km</p>
             </div>
             <ul class="list-group list-group-flush lista">
               <li class="list-group-item">N° stanze: {{$appartamento->rooms_number}}
@@ -82,7 +86,7 @@
             <img src="http://localhost:8000/storage/@{{img_url}}" class="img-thumbnail mt-2 w-100">
             <div class="card-body h-15">
               <p class="card-title">@{{via}} @{{numero_civico}}, @{{citta}}, @{{cap}}, @{{provincia}}</p>
-              <p class="card-title">Distanza: @{{distanza}}</p>
+              <p class="card-title">Distanza: circa @{{distanza}} km</p>
             </div>
             <ul class="list-group list-group-flush lista">
               <li class="list-group-item">N° stanze: @{{numero_stanze}}

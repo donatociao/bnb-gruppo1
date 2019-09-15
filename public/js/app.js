@@ -49259,37 +49259,42 @@ var card_appartamento = $("#card").html();
 var template = Handlebars.compile(card_appartamento); // Funzione che genera le cards e le inserisce nell'html
 
 function genera_card(informazioni) {
+  var j = 0;
+  var distanza = 0;
   $(".container-handlebars").empty();
+  console.log(informazioni.result.length);
 
-  if (informazioni.result.length != 0) {
-    for (var i = 0; i < informazioni.result.length; i++) {
-      if (informazioni.result[i]["public"]) {
-        var context = {
-          'address_id': informazioni.result[i].address_id,
-          'img_url': informazioni.result[i].url_img,
-          "titolo": informazioni.result[i].title,
-          "via": informazioni.result[i].street,
-          'cap': informazioni.result[i].cap,
-          "citta": informazioni.result[i].city,
-          "numero_civico": informazioni.result[i].civic_number,
-          'provincia': informazioni.result[i].prov,
-          "numero_stanze": informazioni.result[i].rooms_number,
-          "numero_letti": informazioni.result[i].host_number,
-          "numero_bagni": informazioni.result[i].wc_number,
-          "metri_quadri": informazioni.result[i].mq,
-          "wifi": informazioni.result[i].wifi,
-          "parcheggio": informazioni.result[i].parking,
-          "piscina": informazioni.result[i].pool,
-          "portineria": informazioni.result[i].reception,
-          "sauna": informazioni.result[i].spa,
-          "vista_mare": informazioni.result[i].sea_view,
-          "distanza": informazioni.result[i].distance
-        };
-        var html = template(context);
-        $(".container-handlebars").append(html);
-      }
+  for (var i = 0; i < informazioni.result.length; i++) {
+    if (informazioni.result[i]["public"]) {
+      j++;
+      distanza = Math.round(informazioni.result[i].distance / 1000);
+      var context = {
+        'address_id': informazioni.result[i].address_id,
+        'img_url': informazioni.result[i].url_img,
+        "titolo": informazioni.result[i].title,
+        "via": informazioni.result[i].street,
+        'cap': informazioni.result[i].cap,
+        "citta": informazioni.result[i].city,
+        "numero_civico": informazioni.result[i].civic_number,
+        'provincia': informazioni.result[i].prov,
+        "numero_stanze": informazioni.result[i].rooms_number,
+        "numero_letti": informazioni.result[i].host_number,
+        "numero_bagni": informazioni.result[i].wc_number,
+        "metri_quadri": informazioni.result[i].mq,
+        "wifi": informazioni.result[i].wifi,
+        "parcheggio": informazioni.result[i].parking,
+        "piscina": informazioni.result[i].pool,
+        "portineria": informazioni.result[i].reception,
+        "sauna": informazioni.result[i].spa,
+        "vista_mare": informazioni.result[i].sea_view,
+        "distanza": distanza
+      };
+      var html = template(context);
+      $(".container-handlebars").append(html);
     }
-  } else {
+  }
+
+  if (j == 0) {
     $(".container-handlebars").html('<h2 style= "color: red">Nessun appartamento trovato!!</h2>');
   }
 }
