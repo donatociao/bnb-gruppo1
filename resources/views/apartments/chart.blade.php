@@ -35,3 +35,4 @@
 <input  class="d-none" id="title" type="text" name="" value="{{$titolo}}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 @endsection
+@section('title','BoolBnB - Statistiche appartamento')

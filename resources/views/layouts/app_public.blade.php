@@ -10,7 +10,7 @@
     {{-- Meta mappa --}}
     <meta name="viewport" content="initial-scale=7.0, width=device-width" />
 
-    <title>{{ config('app.name', 'BoolBnB') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>

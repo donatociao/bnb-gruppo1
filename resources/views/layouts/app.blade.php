@@ -8,7 +8,7 @@
         {{-- Meta mappa --}}
         <meta name="viewport" content="initial-scale=9.0, width=device-width" />
 
-        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+        <title>@yield('title')</title>
         <!-- Favicon -->
         <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->

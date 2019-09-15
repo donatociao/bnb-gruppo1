@@ -7,3 +7,4 @@
   </div>
 </div>
 @endsection
+@section('title','404 Not Found')
