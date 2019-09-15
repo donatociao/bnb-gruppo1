@@ -27,7 +27,7 @@ class EmailController extends Controller
     $nuovo_messaggio->fill($dati_messaggio);
     $nuovo_messaggio->save();
 
-    Mail::to('alessandrorossi643@gmail.com')->send(new NewMessage ($nuovo_messaggio));
+    Mail::send(new NewMessage ($nuovo_messaggio));
 
     return redirect()->route('messaggio_inviato');
   }
