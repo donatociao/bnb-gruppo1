@@ -49261,15 +49261,18 @@ var template = Handlebars.compile(card_appartamento); // Funzione che genera le 
 function genera_card(informazioni) {
   $(".container-handlebars").empty();
 
-  if (informazioni.result.length) {
+  if (informazioni.result.length != 0) {
     for (var i = 0; i < informazioni.result.length; i++) {
       if (informazioni.result[i]["public"]) {
         var context = {
           'address_id': informazioni.result[i].address_id,
           'img_url': informazioni.result[i].url_img,
           "titolo": informazioni.result[i].title,
+          "via": informazioni.result[i].street,
+          'cap': informazioni.result[i].cap,
           "citta": informazioni.result[i].city,
           "numero_civico": informazioni.result[i].civic_number,
+          'provincia': informazioni.result[i].prov,
           "numero_stanze": informazioni.result[i].rooms_number,
           "numero_letti": informazioni.result[i].host_number,
           "numero_bagni": informazioni.result[i].wc_number,
