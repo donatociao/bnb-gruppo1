@@ -55,7 +55,7 @@
             <h5 class="card-title2">{{$appartamento->title}}</h5>
             <img src="{{ asset('storage/'. $appartamento->url_img) }}" class="img-thumbnail mt-2 w-100">
             <div class="card-body h-15">
-              <p class="card-title">{{$appartamento->street}} {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
+              <p class="card-title">{{$appartamento->street}}, {{$appartamento->civic_number}}, {{$appartamento->city}}, {{$appartamento->cap}}, {{$appartamento->prov}}</p>
               <p class="card-title">Distanza: {{$appartamento->distance}}</p>
             </div>
             <ul class="list-group list-group-flush lista">
@@ -77,8 +77,6 @@
 
     {{-- SCRIPT DI HANDLEBARS --}}
     <script id="card" type="text/x-handlebars-template">
-      <div class="container container-cards">
-        <div class="row m-0 p-0">
           <div class="card-app col-lg-3 col-md-6 col-sm-12">
             <h5 class="card-title2">@{{titolo}}</h5>
             <img src="http://localhost:8000/storage/@{{img_url}}" class="img-thumbnail mt-2 w-100">
@@ -97,7 +95,5 @@
               <input class="visual2" type="submit" name="" value="Visualizza">
             </form>
           </div>
-        </div>
-      </div>
     </script>
 @endsection
