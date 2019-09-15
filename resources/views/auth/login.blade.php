@@ -64,3 +64,4 @@
         </div>
     </div>
 @endsection
+@section('title','BoolBnB - Accedi')

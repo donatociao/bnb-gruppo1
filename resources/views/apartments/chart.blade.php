@@ -31,3 +31,4 @@
 <input  class="d-none" id="title" type="text" name="" value="{{$titolo}}">
 
 @endsection
+@section('title','BoolBnB - Statistiche appartamento')

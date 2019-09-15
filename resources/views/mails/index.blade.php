@@ -41,3 +41,4 @@
     </div>
 </div>
 @endsection
+@section('title','BoolBnB - Tutte le email')
