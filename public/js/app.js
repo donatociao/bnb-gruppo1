@@ -49168,44 +49168,6 @@ $(document).ready(function () {
     }
 
     filtri();
-  }); ///// GRAFICO
-
-  $('.grafico').append('<canvas id="grafico_barre" width="400" height="400"></canvas>');
-  var ctx = $('#grafico_barre');
-  var dati = $('#apartment').val();
-  var array = dati.split(",");
-  var titolo = $('#title').val();
-  console.log(array);
-  var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Visualizzazioni', 'Messaggi'],
-      datasets: [{
-        label: titolo,
-        backgroundColor: ['yellow', 'red'],
-        data: array
-      }]
-    },
-    options: {
-      scales: {
-        xAxes: [{
-          barPercentage: 0.3
-        }],
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      },
-      legend: {
-        labels: {
-          fontSize: 20,
-          fontColor: 'grey',
-          boxWidth: 0,
-          fontStyle: 'bold'
-        }
-      }
-    }
   });
 }); // Funzione chiamata ajax per filtrare appartamenti
 
@@ -49377,8 +49339,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\esercizi\bnb-gruppo1.git\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\booleanProjects\boolbnb-gruppo1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

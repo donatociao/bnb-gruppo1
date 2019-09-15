@@ -1064,3 +1064,49 @@ var SalesChart = (function() {
 	}
 
 })();
+
+///// GRAFICO
+var ctx = $('#grafico_barre');
+var dati = $('#apartment').val();
+var array = dati.split(",");
+var titolo = $('#title').val();
+console.log(array);
+var chart = new Chart(ctx, {
+	type: 'bar',
+	data: {
+			labels: ['Visualizzazioni', 'Messaggi'],
+			datasets: [{
+					label: titolo,
+					backgroundColor: ['rgba(255,99,132,0.8)', 'rgba(255,205,86,0.8)'],
+					borderColor: ['rgba(255,99,132)','rgba(255,205,86)'],
+					borderWidth: 3,
+					data: array,
+			}]
+	},
+	options: {
+		scales: {
+			xAxes: [{
+				barPercentage: 0.5,
+					barThickness: 100,
+					maxBarThickness: 100,
+					minBarLength: 2,
+					gridLines: {
+							offsetGridLines: true
+					}
+			}],
+			yAxes: [{
+				ticks: {
+					beginAtZero: true,
+				}
+			}],
+	},
+		legend: {
+			labels: {
+				fontSize: 20,
+				fontColor: 'grey',
+				boxWidth: 0,
+				fontStyle: 'bold'
+			}
+		}
+	}
+});
