@@ -11,7 +11,7 @@
     {{-- Condizioni per la statistica messaggi/visualizzazioni --}}
     <h1><i class="fas fa-home fa-2x pr-2"></i>{{$titolo}}</h1>
     @if ($rapporto)
-      <h2>RAPPORTO MESSAGGI/VENDITE = {{$rapporto}}%</h2>
+      <h2>RAPPORTO MESSAGGI/VISUALIZZAZIONI = {{$rapporto}}%</h2>
       @if ($rapporto>=30)
         <h2>L'appartamento sta avendo molto successo, circa 1 su 3 dei visitatori ti ha inviato un messaggio.</h2>
       @endif
